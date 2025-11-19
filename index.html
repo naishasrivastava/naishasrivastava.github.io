@@ -498,20 +498,28 @@
                 padding: 2rem;
             }
         }
-		/* Consistent spacing for all section headings and their content */
+		
+		/* Ensure consistent spacing between section headings and content */
 		section h2 {
 		    margin-bottom: 3rem; /* space between heading and first card/content */
 		}
 		
-		/* Remove extra top margin on first item inside container */
-		section > .container > *:not(h2) {
-		    margin-top: 0;
+		/* Add top margin to first card/project/experience/contact element */
+		section .card:first-child,
+		section .exp-card:first-child,
+		section .project-card:first-child,
+		section .contact-card:first-child {
+		    margin-top: 1.5rem; /* space between heading and first card */
 		}
 		
-		/* Uniform spacing between cards/content in each section */
-		.card, .exp-card, .project-card, .contact-card {
+		/* Optional: add uniform bottom margin to all cards for spacing between items */
+		section .card,
+		section .exp-card,
+		section .project-card,
+		section .contact-card {
 		    margin-bottom: 2rem; /* space between cards */
 		}
+
     </style>
 </head>
 <body>
