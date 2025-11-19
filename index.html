@@ -215,7 +215,7 @@
             font-weight: 900;
             text-transform: lowercase;
             color: #78350f;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             display: inline-block;
             background: white;
             padding: 0.75rem 1.5rem;
@@ -243,6 +243,7 @@
         .grid.project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 3rem;
         }
 
         .card {
@@ -271,6 +272,9 @@
             height: 12px;
             background: #2563eb;
             margin-bottom: 1.5rem;
+            float: left;
+            margin-right: 0.75rem;
+            margin-top: 0.5rem;
         }
 
         .card-icon.square {
@@ -287,6 +291,7 @@
             text-transform: lowercase;
             color: #78350f;
             margin-bottom: 1.5rem;
+            overflow: hidden;
         }
 
         .card p {
@@ -304,8 +309,13 @@
             border: 2px solid #78350f;
             padding: 2.5rem;
             margin-bottom: 2rem;
+            margin-top: 3rem;
             box-shadow: 6px 6px 0px rgba(120, 53, 15, 0.15);
             transition: all 0.3s;
+        }
+
+        .exp-card:first-of-type {
+            margin-top: 3rem;
         }
 
         .exp-card:hover {
@@ -498,28 +508,6 @@
                 padding: 2rem;
             }
         }
-		
-		/* Ensure consistent spacing between section headings and content */
-		section h2 {
-		    margin-bottom: 3rem; /* space between heading and first card/content */
-		}
-		
-		/* Add top margin to first card/project/experience/contact element */
-		section .card:first-child,
-		section .exp-card:first-child,
-		section .project-card:first-child,
-		section .contact-card:first-child {
-		    margin-top: 1.5rem; /* space between heading and first card */
-		}
-		
-		/* Optional: add uniform bottom margin to all cards for spacing between items */
-		section .card,
-		section .exp-card,
-		section .project-card,
-		section .contact-card {
-		    margin-bottom: 2rem; /* space between cards */
-		}
-
     </style>
 </head>
 <body>
@@ -687,13 +675,31 @@
                     <div class="project-role">lead intern</div>
                     <p class="project-desc">oversaw STEM activities for 25+ elementary campers, mentored new interns and ensured inclusive participation</p>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">ar workshop research</h3>
+                        <span style="font-size: 1.75rem; color: white;">→</span>
+                    </div>
+                    <div class="project-role">university of texas</div>
+                    <p class="project-desc">participated in workshop to create intuitive 3D interfaces with focus on accessibility and immersion in spatial environments</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">financial analysis project</h3>
+                        <span style="font-size: 1.75rem; color: white;">→</span>
+                    </div>
+                    <div class="project-role">charles schwab intern</div>
+                    <p class="project-desc">analyzed infrastructure investments and economic policy impacts on city development and sustainability</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>let's connect</h2>
+        <div class="container" style="text-align: center;">
+            <h2 style="display: inline-block;">let's connect</h2>
             
             <div class="contact-card">
                 <p class="contact-text">open to new opportunities, collaborations, and conversations about tech and design</p>
