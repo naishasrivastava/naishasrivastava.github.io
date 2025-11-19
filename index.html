@@ -498,6 +498,20 @@
                 padding: 2rem;
             }
         }
+		/* Consistent spacing for all section headings and their content */
+		section h2 {
+		    margin-bottom: 3rem; /* space between heading and first card/content */
+		}
+		
+		/* Remove extra top margin on first item inside container */
+		section > .container > *:not(h2) {
+		    margin-top: 0;
+		}
+		
+		/* Uniform spacing between cards/content in each section */
+		.card, .exp-card, .project-card, .contact-card {
+		    margin-bottom: 2rem; /* space between cards */
+		}
     </style>
 </head>
 <body>
