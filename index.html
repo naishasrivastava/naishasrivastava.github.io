@@ -271,10 +271,13 @@
             width: 12px;
             height: 12px;
             background: #2563eb;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             margin-bottom: 1.5rem;
-            float: left;
-            margin-right: 0.75rem;
-            margin-top: 0.5rem;
         }
 
         .card-icon.square {
@@ -290,8 +293,7 @@
             font-weight: 900;
             text-transform: lowercase;
             color: #78350f;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
+            margin: 0;
         }
 
         .card p {
@@ -553,8 +555,10 @@
             <h2 style="transform: rotate(1deg);">about me</h2>
             <div class="grid about-grid">
                 <div class="card">
-                    <div class="card-icon square"></div>
-                    <h3>education</h3>
+                    <div class="card-header">
+                        <div class="card-icon square"></div>
+                        <h3>education</h3>
+                    </div>
                     <p><span class="label">cornell university</span><br>
                     b.a. computer science<br>
                     <span style="font-size: 0.875rem; color: #92400e;">minor in ai, business, information science</span></p>
@@ -563,8 +567,10 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-icon"></div>
-                    <h3>skills</h3>
+                    <div class="card-header">
+                        <div class="card-icon"></div>
+                        <h3>skills</h3>
+                    </div>
                     <p><span class="label">languages</span><br>
                     python • java • javascript • html/css</p>
                     <p><span class="label">tools</span><br>
@@ -574,8 +580,10 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-icon circle"></div>
-                    <h3>leadership</h3>
+                    <div class="card-header">
+                        <div class="card-icon circle"></div>
+                        <h3>leadership</h3>
+                    </div>
                     <p><span class="label">kappa theta pi</span><br>
                     professional tech fraternity</p>
                     <p><span class="label">medium design collective</span><br>
