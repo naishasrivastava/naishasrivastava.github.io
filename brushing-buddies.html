@@ -16,6 +16,7 @@
             background-color: #fffbeb;
             color: #78350f;
             line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulance type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
         }
 
         nav {
@@ -43,48 +44,76 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #5C81F6 0%, #9B87F5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 8rem 2rem 4rem;
-            color: white;
             text-align: center;
         }
 
+        .hero-content {
+            max-width: 1000px;
+        }
+
         .hero h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 900;
             text-transform: lowercase;
-            margin-bottom: 1rem;
+            color: #78350f;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 .highlight {
+            color: #1d4ed8;
         }
 
         .hero .subtitle {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 3rem;
+            text-transform: lowercase;
         }
 
         .project-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .info-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border: 2px solid #78350f;
+            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
             text-align: left;
+        }
+
+        .info-item.team {
+            grid-column: 1 / 3;
         }
 
         .info-item strong {
             display: block;
             font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            text-transform: lowercase;
+            font-weight: 900;
+            color: #1d4ed8;
             margin-bottom: 0.5rem;
-            opacity: 0.8;
         }
 
         .info-item p {
             font-size: 1rem;
+            color: #78350f;
+            text-transform: lowercase;
+            margin: 0;
+            line-height: 1.4;
         }
 
         .container {
@@ -98,19 +127,19 @@
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             text-transform: lowercase;
             color: #78350f;
-            margin-bottom: 2rem;
-            border-bottom: 4px solid #5C81F6;
+            margin-bottom: 3rem;
             display: inline-block;
             padding-bottom: 0.5rem;
+            border-bottom: 4px solid #1d4ed8;
         }
 
         h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 900;
             text-transform: lowercase;
             color: #1d4ed8;
             margin-top: 2rem;
@@ -122,12 +151,13 @@
             line-height: 1.8;
             color: #92400e;
             margin-bottom: 1.5rem;
+            text-transform: lowercase;
         }
 
         .challenge-box {
             background: white;
             padding: 3rem;
-            border: 3px solid #78350f;
+            border: 2px solid #78350f;
             box-shadow: 8px 8px 0px rgba(120, 53, 15, 0.2);
             margin: 2rem 0;
             text-align: center;
@@ -138,24 +168,19 @@
             font-weight: 800;
             color: #1d4ed8;
             margin-bottom: 1rem;
+            text-transform: lowercase;
         }
 
         .challenge-box .answer {
             font-size: 1.25rem;
             color: #78350f;
             font-weight: 600;
+            text-transform: lowercase;
         }
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -165,90 +190,143 @@
             padding: 2rem;
             border: 2px solid #78350f;
             box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 6px 6px 0px rgba(120, 53, 15, 0.25);
+            transform: translateY(-2px);
         }
 
         .card h4 {
             font-size: 1.25rem;
-            font-weight: 700;
+            font-weight: 900;
             color: #78350f;
             margin-bottom: 1rem;
             text-transform: lowercase;
         }
 
+        .card p {
+            margin: 0;
+        }
+
         .color-palette {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
             margin: 2rem 0;
         }
 
         .color-swatch {
-            width: 100px;
-            height: 100px;
+            aspect-ratio: 1;
             border: 2px solid #78350f;
             display: flex;
-            align-items: flex-end;
-            padding: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 700;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 900;
             color: white;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            text-transform: lowercase;
+            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
         }
 
         .insights-list {
             list-style: none;
             padding: 0;
+            margin-top: 2rem;
         }
 
         .insights-list li {
             background: white;
             padding: 1.5rem;
             margin-bottom: 1rem;
-            border-left: 4px solid #5C81F6;
-            box-shadow: 2px 2px 0px rgba(120, 53, 15, 0.1);
+            border-left: 4px solid #1d4ed8;
+            box-shadow: 3px 3px 0px rgba(120, 53, 15, 0.1);
         }
 
         .insights-list li strong {
             color: #1d4ed8;
-            font-weight: 700;
+            font-weight: 900;
+            text-transform: lowercase;
         }
 
-        .typography-showcase {
-            background: white;
-            padding: 3rem;
-            border: 2px solid #78350f;
+        .typography-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin: 2rem 0;
         }
 
-        .font-sample {
-            margin-bottom: 2rem;
+        .font-card {
+            background: white;
+            padding: 3rem;
+            border: 2px solid #78350f;
+            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
         }
 
-        .font-sample .label {
+        .font-card .label {
+            font-size: 0.875rem;
+            font-weight: 900;
+            color: #1d4ed8;
+            text-transform: lowercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .font-card .display {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #78350f;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+
+        .font-card .description {
+            font-size: 1rem;
+            color: #92400e;
+            text-transform: lowercase;
+        }
+
+        footer {
+            background: white;
+            border-top: 2px solid #78350f;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #92400e;
             font-size: 0.875rem;
             font-weight: 700;
-            color: #78350f;
-            text-transform: uppercase;
+            text-transform: lowercase;
             margin-bottom: 0.5rem;
         }
 
-        .font-sample .display {
-            font-size: 3rem;
-            font-weight: 700;
+        footer .back-link {
             color: #1d4ed8;
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .typography-section {
+                grid-template-columns: 1fr;
             }
 
             .project-info {
-                gap: 1.5rem;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -259,21 +337,23 @@
     </nav>
 
     <div class="hero">
-        <h1>brushing buddies x mdc praxis</h1>
-        <p class="subtitle">transforming toothbrushing from struggle to joy</p>
-        
-        <div class="project-info">
-            <div class="info-item">
-                <strong>Timeline</strong>
-                <p>August - December 2025</p>
-            </div>
-            <div class="info-item">
-                <strong>Role</strong>
-                <p>Designer</p>
-            </div>
-            <div class="info-item">
-                <strong>Team</strong>
-                <p>Alesia Barrios, Ella Montesa, Isabella Fang,<br>Naisha Srivastava, Vivian Lun, Yeji Moon</p>
+        <div class="hero-content">
+            <h1>brushing buddies<br><span class="highlight">x mdc praxis</span></h1>
+            <p class="subtitle">transforming toothbrushing from struggle to joy</p>
+            
+            <div class="project-info">
+                <div class="info-item">
+                    <strong>timeline:</strong>
+                    <p>august - december 2025</p>
+                </div>
+                <div class="info-item">
+                    <strong>role:</strong>
+                    <p>designer</p>
+                </div>
+                <div class="info-item team">
+                    <strong>team:</strong>
+                    <p>alesia barrios, ella montesa, isabella fang, naisha srivastava, vivian lun, yeji moon</p>
+                </div>
             </div>
         </div>
     </div>
@@ -281,138 +361,153 @@
     <div class="container">
         <section class="section">
             <h2>about the client</h2>
-            <p>Brushing Buddies is an innovative sing-along sound book designed to transform toothbrushing from a daily struggle into a joyful experience. Created by a mom inspired by her daughter, Brushing Buddies uses music, storytelling, and positive reinforcement to make brushing both fun and educational.</p>
-            <p>The company's approach is research-backed, developed in collaboration with the University of Pennsylvania, ensuring its methods are grounded in motivational and learning science.</p>
+            <p>brushing buddies is an innovative sing-along sound book designed to transform toothbrushing from a daily struggle into a joyful experience. created by a mom inspired by her daughter, brushing buddies uses music, storytelling, and positive reinforcement to make brushing both fun and educational.</p>
+            <p>the company's approach is research-backed, developed in collaboration with the university of pennsylvania, ensuring its methods are grounded in motivational and learning science.</p>
         </section>
 
         <section class="section">
             <h2>the challenge</h2>
             <div class="challenge-box">
                 <p class="question">how might we...</p>
-                <p class="answer">redesign Brushing Buddies' website and logo to create a playful, trustworthy brand identity that empowers parents and engages young children?</p>
+                <p class="answer">redesign brushing buddies' website and logo to create a playful, trustworthy brand identity that empowers parents and engages young children?</p>
             </div>
         </section>
 
         <section class="section">
             <h2>research & insights</h2>
-            <p>Before beginning our redesign, we analyzed similar brands in the children's education, wellness, and product spaces. Our goal was to understand how others communicate trust, playfulness, and parent engagement.</p>
+            <p>before beginning our redesign, we analyzed similar brands in the children's education, wellness, and product spaces. our goal was to understand how others communicate trust, playfulness, and parent engagement.</p>
             
-            <h3>key insights</h3>
             <ul class="insights-list">
-                <li><strong>Storytelling through visual identity</strong> - Brands that succeed with parents use cohesive narratives across all touchpoints</li>
-                <li><strong>Care and emotion in all products and visuals</strong> - Parents respond to warmth and authenticity in design</li>
-                <li><strong>Clean, simple and trustworthy content</strong> - Clarity and professionalism build confidence in the product</li>
+                <li><strong>storytelling through visual identity:</strong> brands that succeed with parents use cohesive narratives across all touchpoints</li>
+                <li><strong>care and emotion in all products and visuals:</strong> parents respond to warmth and authenticity in design</li>
+                <li><strong>clean, simple and trustworthy content:</strong> clarity and professionalism build confidence in the product</li>
             </ul>
         </section>
 
         <section class="section">
             <h2>moodboards & exploration</h2>
-            <p>Building on our research insights, we created moodboards to explore visual directions that capture Brushing Buddies' joyful, nurturing, and research-backed identity. These boards guided our choices in color, typography, imagery, and tone for the new brand system.</p>
+            <p>building on our research insights, we created moodboards to explore visual directions that capture brushing buddies' joyful, nurturing, and research-backed identity. these boards guided our choices in color, typography, imagery, and tone for the new brand system.</p>
             
             <div class="grid-2">
                 <div class="card">
                     <h4>playful & innovative</h4>
-                    <p>Conveyed a playful, positive vibe that honors youth, creativity, and inclusivity. Bold and rounded typefaces with vibrant, welcoming colors. Combined childlike energy with modern design trends using soft shapes and approachable sans-serif fonts.</p>
+                    <p>conveyed a playful, positive vibe that honors youth, creativity, and inclusivity. bold and rounded typefaces with vibrant, welcoming colors. combined childlike energy with modern design trends using soft shapes and approachable sans-serif fonts.</p>
                 </div>
                 <div class="card">
                     <h4>calming & approachable</h4>
-                    <p>Created something both playful yet calming to draw attention while emphasizing a smoother teeth-brushing experience. Squiggly lines reminiscent of toothpaste with pops of pastel color—vibrant but calming.</p>
+                    <p>created something both playful yet calming to draw attention while emphasizing a smoother teeth-brushing experience. squiggly lines reminiscent of toothpaste with pops of pastel color—vibrant but calming.</p>
                 </div>
                 <div class="card">
                     <h4>bright & friendly</h4>
-                    <p>Bright and playful identity appealing to kids and parents using organic/rounded shapes, cheerful illustrations, and vibrant palette of greens, blues, yellows, and pinks. Bold sans serif headings paired with lighter text kept it clean and friendly.</p>
+                    <p>bright and playful identity appealing to kids and parents using organic/rounded shapes, cheerful illustrations, and vibrant palette of greens, blues, yellows, and pinks. bold sans serif headings paired with lighter text kept it clean and friendly.</p>
                 </div>
                 <div class="card">
                     <h4>imaginative & textured</h4>
-                    <p>Evoked childhood through playful texture, color, and form. Emphasized imagination and curiosity, relevant to encouraging children through storytelling. Hand-drawn elements and organic shapes appealed to both children and adults.</p>
+                    <p>evoked childhood through playful texture, color, and form. emphasized imagination and curiosity, relevant to encouraging children through storytelling. hand-drawn elements and organic shapes appealed to both children and adults.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2>color palette</h2>
-            <p>Our color palette is designed to appeal to Millennial and Gen Z parents—modern and approachable—while still engaging for young children. Softer pastels resonate with the nurturing, calm world of ages 2–4, while brighter, more vibrant hues energize and inspire creativity for ages 4 and up.</p>
+            <p>our color palette is designed to appeal to millennial and gen z parents—modern and approachable—while still engaging for young children. softer pastels resonate with the nurturing, calm world of ages 2–4, while brighter, more vibrant hues energize and inspire creativity for ages 4 and up.</p>
             
             <div class="color-palette">
-                <div class="color-swatch" style="background-color: #5C81F6;">#5C81F6</div>
-                <div class="color-swatch" style="background-color: #9B87F5;">#9B87F5</div>
-                <div class="color-swatch" style="background-color: #FFB5E8;">#FFB5E8</div>
-                <div class="color-swatch" style="background-color: #FFC6A5;">#FFC6A5</div>
-                <div class="color-swatch" style="background-color: #B4F8C8;">#B4F8C8</div>
-                <div class="color-swatch" style="background-color: #FFE66D;">#FFE66D</div>
+                <div class="color-swatch" style="background-color: #5C81F6;">
+                    <span>#5c81f6</span>
+                </div>
+                <div class="color-swatch" style="background-color: #9B87F5;">
+                    <span>#9b87f5</span>
+                </div>
+                <div class="color-swatch" style="background-color: #FFB5E8;">
+                    <span>#ffb5e8</span>
+                </div>
+                <div class="color-swatch" style="background-color: #FFC6A5;">
+                    <span>#ffc6a5</span>
+                </div>
+                <div class="color-swatch" style="background-color: #B4F8C8;">
+                    <span style="color: #333; text-shadow: none;">#b4f8c8</span>
+                </div>
+                <div class="color-swatch" style="background-color: #FFE66D;">
+                    <span style="color: #333; text-shadow: none;">#ffe66d</span>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <h2>typography</h2>
-            <div class="typography-showcase">
-                <div class="font-sample">
-                    <p class="label">Headlines - Tilt Warp</p>
-                    <p class="display">Brushing Buddies</p>
-                    <p>A sans serif font that matches Brushing Buddies' playful and youthful feel, while maintaining legibility and cleanliness.</p>
+            <div class="typography-section">
+                <div class="font-card">
+                    <span class="label">headlines: tilt warp</span>
+                    <div class="display">brushing buddies</div>
+                    <p class="description">a sans serif font that matches brushing buddies' playful and youthful feel, while maintaining legibility and cleanliness.</p>
                 </div>
-                <div class="font-sample">
-                    <p class="label">Body Text - Poppins</p>
-                    <p style="font-size: 1.25rem; line-height: 1.8;">A sans serif font that pairs with the header font and matches Brushing Buddies' playful and youthful feel, while maintaining legibility and cleanliness. Perfect for longer text passages and descriptions.</p>
+                <div class="font-card">
+                    <span class="label">body text: poppins</span>
+                    <div class="display" style="font-size: 2rem; font-weight: 400;">brushing buddies</div>
+                    <p class="description">a sans serif font that pairs with the header font and matches brushing buddies' playful and youthful feel, while maintaining legibility and cleanliness.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2>logo design</h2>
-            <p>As our team explored logo concepts, we weren't afraid to experiment, pushing for playful, creative directions that capture Brushing Buddies' joyful spirit.</p>
+            <p>as our team explored logo concepts, we weren't afraid to experiment, pushing for playful, creative directions that capture brushing buddies' joyful spirit.</p>
             
-            <div class="grid-3">
+            <div class="grid-2">
                 <div class="card">
                     <h4>before</h4>
-                    <p>• Text-only "Brushing Buddies" wordmark<br>• No character/mascot presence<br>• No visual brand mark</p>
+                    <p>• text-only "brushing buddies" wordmark<br>• no character/mascot presence<br>• no visual brand mark</p>
                 </div>
                 <div class="card">
                     <h4>process</h4>
-                    <p>• Multiple iterations exploring tooth shapes<br>• Playful, hand-drawn aesthetics<br>• Character-based explorations</p>
+                    <p>• multiple iterations exploring tooth shapes<br>• playful, hand-drawn aesthetics<br>• character-based explorations</p>
                 </div>
                 <div class="card">
                     <h4>final design</h4>
-                    <p>• Combined playful font with tooth shape<br>• Friendly, trusting, and fun<br>• Works across all applications</p>
+                    <p>• combined playful font with tooth shape<br>• friendly, trusting, and fun<br>• works across all applications</p>
+                </div>
+                <div class="card">
+                    <h4>characteristics</h4>
+                    <p>• playful, hand-drawn feel<br>• approachable and welcoming<br>• memorable and distinctive</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2>final deliverables</h2>
-            <p>We delivered a complete brand system including:</p>
             
             <div class="grid-2">
                 <div class="card">
                     <h4>🎨 brand guidelines</h4>
-                    <p>Complete visual identity system with logo usage, color palette, typography, and tone of voice guidelines.</p>
+                    <p>complete visual identity system with logo usage, color palette, typography, and tone of voice guidelines.</p>
                 </div>
                 <div class="card">
                     <h4>🌐 website redesign</h4>
-                    <p>Fully designed homepage, product pages, FAQ section, and school program pages optimized for parents and educators.</p>
+                    <p>fully designed homepage, product pages, faq section, and school program pages optimized for parents and educators.</p>
                 </div>
                 <div class="card">
                     <h4>📱 responsive design</h4>
-                    <p>Mobile-first approach ensuring seamless experience across all devices for busy parents on-the-go.</p>
+                    <p>mobile-first approach ensuring seamless experience across all devices for busy parents on-the-go.</p>
                 </div>
                 <div class="card">
                     <h4>✨ brand assets</h4>
-                    <p>Favicon, header/footer designs, product photography guidelines, and social media templates.</p>
+                    <p>favicon, header/footer designs, product photography guidelines, and social media templates.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h2>impact & learnings</h2>
-            <p>This project taught us the importance of designing for multiple audiences simultaneously—creating a visual identity that speaks to both the decision-makers (parents) and the end-users (children). We learned to balance playfulness with trustworthiness, ensuring the brand felt both fun and research-backed.</p>
+            <p>this project taught us the importance of designing for multiple audiences simultaneously—creating a visual identity that speaks to both the decision-makers (parents) and the end-users (children). we learned to balance playfulness with trustworthiness, ensuring the brand felt both fun and research-backed.</p>
             
-            <p>By collaborating with our client throughout the design process and iterating based on their feedback, we created a cohesive brand system that truly reflects Brushing Buddies' mission to transform daily oral hygiene from a struggle into a joyful, positive routine.</p>
+            <p>by collaborating with our client throughout the design process and iterating based on their feedback, we created a cohesive brand system that truly reflects brushing buddies' mission to transform daily oral hygiene from a struggle into a joyful, positive routine.</p>
         </section>
     </div>
 
-    <footer style="background: #78350f; color: white; padding: 3rem 2rem; text-align: center;">
-        <p style="color: white; margin-bottom: 1rem;">© 2025 naisha srivastava</p>
-        <a href="index.html" class="back-link" style="color: white;">← back to portfolio</a>
+    <footer>
+        <p>© 2025 naisha srivastava</p>
+        <a href="index.html" class="back-link">← back to portfolio</a>
     </footer>
 </body>
 </html>
