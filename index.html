@@ -208,7 +208,9 @@
 
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">naisha srivastava</div>
+            <div class="nav-logo">
+                <a href="#home" style="text-decoration: none; color: inherit;">naisha srivastava</a>
+            </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links">
                 <li><a href="#about" onclick="setActive(event)">about me</a></li>
@@ -219,6 +221,7 @@
             </ul>
         </div>
         <div class="mobile-menu" id="mobileMenu">
+            <a href="#home" onclick="toggleMenu()">naisha srivastava</a>
             <a href="#about" onclick="toggleMenu(); setActive(event)">about me</a>
             <a href="#experience" onclick="toggleMenu(); setActive(event)">experience</a>
             <a href="#projects" onclick="toggleMenu(); setActive(event)">projects</a>
