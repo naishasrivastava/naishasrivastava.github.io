@@ -39,14 +39,17 @@
             color: #78350f; text-decoration: none; transition: color 0.3s;
         }
         .nav-links a:hover, .nav-links a.active {
-            color: #1d4ed8; text-decoration: underline;
-            text-decoration-thickness: 2px; text-underline-offset: 4px;
+            color: #1d4ed8;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
         }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #78350f; }
         .mobile-menu { display: none; background: white; border-top: 2px solid #78350f; }
         .mobile-menu.active { display: block; }
         .mobile-menu a { display: block; padding: 1rem 1.5rem; font-weight: 700; text-transform: lowercase; color: #78350f; text-decoration: none; }
         .mobile-menu a:hover { background: #fef3c7; }
+        .mobile-menu a.active { color: #1d4ed8; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
         section { min-height: 100vh; display: flex; align-items: center; padding: 8rem 1.5rem; position: relative; z-index: 10; }
         .container { max-width: 1200px; margin: 0 auto; width: 100%; }
         .hero-card {
@@ -127,8 +130,6 @@
         }
         .project-desc { text-transform: lowercase; color: white; }
 
-
-
         #playground { }
         .playground-intro { display: none; }
         .playground-grid {
@@ -147,8 +148,6 @@
             display: block;
             color: inherit;
         }
-
-
         .play-card:nth-child(1) { transform: rotate(-1deg); }
         .play-card:nth-child(2) { transform: rotate(0.8deg); }
         .play-card:nth-child(3) { transform: rotate(-0.5deg); }
@@ -157,22 +156,10 @@
         .play-card:nth-child(6) { transform: rotate(0.6deg); }
         .play-card:nth-child(7) { transform: rotate(-1.2deg); }
         .play-card:nth-child(8) { transform: rotate(0.4deg); }
-        .play-card:not(.placeholder-play):hover {
+        .play-card:hover {
             box-shadow: 10px 10px 0px rgba(120,53,15,0.25);
             transform: translateY(-3px) rotate(0deg);
         }
-        .play-card.placeholder-play {
-            background: white;
-            border: 2px solid #78350f;
-            box-shadow: 6px 6px 0px rgba(120,53,15,0.15);
-            cursor: default;
-            color: inherit;
-        }
-        .play-card.placeholder-play:hover {
-            box-shadow: 10px 10px 0px rgba(120,53,15,0.25);
-            transform: translateY(-3px) rotate(0deg);
-        }
-        .play-arrow { font-size: 1.75rem; color: #2563eb; font-weight: 900; flex-shrink: 0; line-height: 1; }
         .play-emoji { display: none; }
         .play-tag { display: none; }
         .play-header {
@@ -183,8 +170,8 @@
             gap: 0.5rem;
         }
         .play-title { font-size: 1.875rem; font-weight: 900; text-transform: lowercase; color: #78350f; margin: 0; }
+        .play-arrow { font-size: 1.75rem; color: #2563eb; font-weight: 900; flex-shrink: 0; line-height: 1; }
         .play-desc { font-size: 0.9rem; color: #92400e; text-transform: lowercase; line-height: 1.6; }
-
 
         .contact-card {
             background: rgba(255,255,255,0.9); padding: 4rem; border: 2px solid #78350f;
@@ -210,6 +197,7 @@
             h2 { font-size: 2.5rem; }
             .hero-card { padding: 2rem; }
             .contact-card { padding: 2rem; }
+            .playground-grid { grid-template-columns: repeat(2, 1fr); }
         }
         .label a { color: inherit; text-decoration: none; }
         .label a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
@@ -456,7 +444,7 @@
                     </div>
                     <p class="play-desc">an interactive music visualization that transforms audio frequencies into dynamic, rotating radial patterns, allowing users to generate and export unique digital artwork</p>
                 </a>
-                
+
                 <a href="https://naishasrivastava.github.io/pixelate.github.io/" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">pixelate</div>
@@ -464,15 +452,15 @@
                     </div>
                     <p class="play-desc">a square-by-square drawing environment that develops a blank grid into complete pixel artwork, with each colored square contributing to the full scene</p>
                 </a>
-                
+
                 <a href="https://naishasrivastava.github.io/kaleido.github.io/" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">kaleido</div>
                         <span class="play-arrow">→</span>
                     </div>
-                    <p class="play-desc">a drawing tool that mirrors each stroke into symmetrical kaleidoscope patterns, simple gestures turn into evolving geometric compositions</p>
+                    <p class="play-desc">a drawing tool that mirrors each stroke into symmetrical kaleidoscope patterns, simple gestures seamlessly turn into evolving geometric compositions</p>
                 </a>
-                
+
                 <a href="https://naishasrivastava.github.io/aether.github.io/" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">aether</div>
@@ -480,7 +468,7 @@
                     </div>
                     <p class="play-desc">a particle simulation environment where elements drift, collide, and spark, forming vivid visuals that respond intuitively and blur the line between physics and art</p>
                 </a>
-                
+
                 <a href="https://naishasrivastava.github.io/starstruck.github.io/" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">starstruck</div>
@@ -489,31 +477,28 @@
                     <p class="play-desc">a starfield that responds to cursor movement and clicks, letting stars be placed, connected, and traced into patterns that form constellations across the digital cosmos</p>
                 </a>
 
-                
                 <a href="https://naishasrivastava.github.io" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">project title</div>
                         <span class="play-arrow">→</span>
                     </div>
-                    <p class="play-desc">woof</p>
+                    <p class="play-desc">fluid, ethereal simulations that blur the line between code and canvas</p>
                 </a>
 
-                
                 <a href="https://naishasrivastava.github.io" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">project title</div>
                         <span class="play-arrow">→</span>
                     </div>
-                    <p class="play-desc">woof</p>
+                    <p class="play-desc">fluid, ethereal simulations that blur the line between code and canvas</p>
                 </a>
 
-                
                 <a href="https://naishasrivastava.github.io" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">project title</div>
                         <span class="play-arrow">→</span>
                     </div>
-                    <p class="play-desc">woof</p>
+                    <p class="play-desc">fluid, ethereal simulations that blur the line between code and canvas</p>
                 </a>
 
             </div>
@@ -526,7 +511,7 @@
             <div class="contact-card">
                 <p class="contact-text">open to new opportunities, collaborations, and conversations about tech and design</p>
                 <div class="contact-links">
-                    <a href="/cdn-cgi/l/email-protection#91ffe2a3a3a3a8d1f2fee3fff4fdfdbff4f5e4" class="contact-btn email">
+                    <a href="mailto:ns2229@cornell.edu" class="contact-btn email">
                         <span>✉</span><span>email</span>
                     </a>
                     <a href="https://www.linkedin.com/in/naishasrivastava" target="_blank" rel="noopener noreferrer" class="contact-btn linkedin">
@@ -541,16 +526,19 @@
         </div>
     </section>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
         }
+
         function setActive(event) {
             const links = document.querySelectorAll('.nav-links a, .mobile-menu a');
             links.forEach(link => link.classList.remove('active'));
             event.target.classList.add('active');
         }
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -558,23 +546,32 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-        window.addEventListener('scroll', () => {
+
+        // Highlight active nav link based on scroll position
+        function updateActiveNav() {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
+            const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+            let currentSection = '';
+
             sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
                 const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
                 }
             });
-        });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
     </script>
 </body>
 </html>
