@@ -50,12 +50,29 @@
         .mobile-menu a { display: block; padding: 1rem 1.5rem; font-weight: 700; text-transform: lowercase; color: #78350f; text-decoration: none; }
         .mobile-menu a:hover { background: #fef3c7; }
         .mobile-menu a.active { color: #1d4ed8; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-        section { min-height: 100vh; display: flex; align-items: center; padding: 8rem 1.5rem; position: relative; z-index: 10; }
+
+        /* Hero section: full viewport height, centered below nav */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+            /* The nav is ~72px tall; padding-top nudges the center point down slightly so it feels optically centered below the nav */
+            padding-top: 72px;
+        }
+
+        section:not(#home) {
+            min-height: 100vh; display: flex; align-items: center; padding: 8rem 1.5rem; position: relative; z-index: 10;
+        }
         .container { max-width: 1200px; margin: 0 auto; width: 100%; }
         .hero-card {
             background: rgba(255,255,255,0.8); backdrop-filter: blur(12px);
             padding: 4rem; border: 2px solid #78350f;
             box-shadow: 8px 8px 0px rgba(120,53,15,0.2);
+            width: 100%;
         }
         .badge {
             display: inline-block; background: #2563eb; color: white;
@@ -198,6 +215,7 @@
             .hero-card { padding: 2rem; }
             .contact-card { padding: 2rem; }
             .playground-grid { grid-template-columns: repeat(2, 1fr); }
+            #home { padding-top: 64px; }
         }
         .label a { color: inherit; text-decoration: none; }
         .label a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
@@ -341,7 +359,6 @@
             <h2 style="transform: rotate(1deg);">projects</h2>
             <div class="grid project-grid">
 
-                <!-- r1 -->
                 <div class="project-card">
                     <a href="brushing-buddies.html" style="text-decoration: none; color: inherit;">
                         <div class="project-header">
@@ -375,7 +392,6 @@
                     </a>
                 </div>
 
-                <!-- r2 -->
                 <div class="project-card">
                     <a href="https://naishasrivastava.wordpress.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                         <div class="project-header">
@@ -383,7 +399,7 @@
                             <span style="font-size: 1.75rem; color: white;">→</span>
                         </div>
                         <div class="project-role">wordpress</div>
-                        <p class="project-desc">a living archive of essays, cultural musings, fleeting thoughts, and the ideas that linger far longer than expected </p>
+                        <p class="project-desc">a living archive of essays, cultural musings, fleeting thoughts, and the ideas that linger far longer than expected</p>
                     </a>
                 </div>
 
@@ -404,7 +420,6 @@
                     <p class="project-desc">developed advanced algorithms optimizing robot performance with 80+ pages of documentation</p>
                 </div>
 
-                <!-- r3 -->
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">camp invention leadership</h3>
@@ -433,7 +448,6 @@
         </div>
     </section>
 
-    <!-- ✦ PLAYGROUND ✦ -->
     <section id="playground">
         <div class="container">
             <h2 style="transform: rotate(-1deg);">playground</h2>
@@ -503,8 +517,6 @@
                     </div>
                     <p class="play-desc">a starfield that responds to cursor movement and clicks, letting stars be placed, connected, and traced into patterns that form constellations across the digital cosmos</p>
                 </a>
-
-                
 
             </div>
         </div>
