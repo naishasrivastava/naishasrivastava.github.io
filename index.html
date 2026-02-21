@@ -51,22 +51,18 @@
         .mobile-menu a:hover { background: #fef3c7; }
         .mobile-menu a.active { color: #1d4ed8; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
-        /* Hero section: full viewport height, centered below nav */
         #home {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0 1.5rem;
+            padding-top: 72px;
             position: relative;
             z-index: 10;
-            /* The nav is ~72px tall; padding-top nudges the center point down slightly so it feels optically centered below the nav */
-            padding-top: 72px;
         }
 
-        section:not(#home) {
-            min-height: 100vh; display: flex; align-items: center; padding: 8rem 1.5rem; position: relative; z-index: 10;
-        }
+        section:not(#home) { min-height: 100vh; display: flex; align-items: center; padding: 8rem 1.5rem; position: relative; z-index: 10; }
         .container { max-width: 1200px; margin: 0 auto; width: 100%; }
         .hero-card {
             background: rgba(255,255,255,0.8); backdrop-filter: blur(12px);
@@ -147,7 +143,6 @@
         }
         .project-desc { text-transform: lowercase; color: white; }
 
-        #playground { }
         .playground-intro { display: none; }
         .playground-grid {
             display: grid;
@@ -207,6 +202,7 @@
         .contact-btn.github { background: #fef3c7; color: #78350f; }
         .contact-btn:hover { transform: translateY(-2px); box-shadow: 6px 6px 0px rgba(120,53,15,0.3); }
         footer { border-top: 2px solid #78350f; padding-top: 2rem; text-align: center; color: #92400e; font-size: 0.875rem; font-weight: 700; text-transform: lowercase; }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
@@ -214,9 +210,38 @@
             h2 { font-size: 2.5rem; }
             .hero-card { padding: 2rem; }
             .contact-card { padding: 2rem; }
-            .playground-grid { grid-template-columns: repeat(2, 1fr); }
-            #home { padding-top: 64px; }
+
+            /* Hero: full viewport, perfectly centered below nav */
+            #home {
+                height: 100vh;
+                padding-top: 64px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Playground: single column on phone */
+            .playground-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            /* Reset card tilts on mobile so they don't overflow */
+            .play-card:nth-child(1),
+            .play-card:nth-child(2),
+            .play-card:nth-child(3),
+            .play-card:nth-child(4),
+            .play-card:nth-child(5),
+            .play-card:nth-child(6),
+            .play-card:nth-child(7),
+            .play-card:nth-child(8) {
+                transform: none;
+            }
         }
+
         .label a { color: inherit; text-decoration: none; }
         .label a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
     </style>
@@ -555,7 +580,6 @@
             event.target.classList.add('active');
         }
 
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -564,7 +588,6 @@
             });
         });
 
-        // Highlight active nav link based on scroll position
         function updateActiveNav() {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
