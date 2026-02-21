@@ -269,8 +269,6 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin: 2rem 0;
-            /* Use align-items: stretch so both cards are same height on desktop */
-            align-items: stretch;
         }
 
         .font-card {
@@ -278,7 +276,6 @@
             padding: 3rem;
             border: 2px solid #78350f;
             box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
-            /* No flex/justify on the card itself — let content flow naturally */
         }
 
         .font-card .label {
@@ -338,23 +335,15 @@
 
             .typography-section {
                 grid-template-columns: 1fr;
-                /* On mobile, each card is its own natural height */
-                align-items: start;
             }
 
-            /* Both font cards get identical padding and no flex stretching */
-            .font-card {
-                padding: 2rem;
-                display: block;
-                height: auto;
+            /* On mobile, undo the flex centering so the card is just natural height */
+            .font-card-preview {
+                display: block !important;
             }
 
             .project-info {
                 grid-template-columns: 1fr;
-            }
-
-            .info-item.team {
-                grid-column: 1;
             }
         }
     </style>
@@ -425,7 +414,7 @@
                 <div class="card">
                     <h4>calming & approachable</h4>
                     <img src="calming.png" alt="calming and approachable moodboard">
-                    <p>created something both playful yet calming to draw attention while emphasizing a smoother teeth-brushing experience for both children and adults. squiggly lines reminiscent of toothpaste tie into the product while adding movement, and pops of pastel color provide vibrancy that remains soothing.</p>
+                    <p>created something both playful yet calming to draw attention while emphasizing a smoother teeth-brushing experience for both children and adults. squiggly lines reminiscent of toothpaste tie into the product while adding movement, and pops of pastel color provide vibrancy that remains soothing. </p>
                 </div>
                 <div class="card">
                     <h4>bright & friendly</h4>
@@ -452,10 +441,10 @@
                     <span>#9b87f5</span>
                 </div>
                 <div class="color-swatch" style="background-color: #FFB5E8;">
-                    <span style="color: #333; text-shadow: none;">#ffb5e8</span>
+                    <span>#ffb5e8</span>
                 </div>
                 <div class="color-swatch" style="background-color: #FFC6A5;">
-                    <span style="color: #333; text-shadow: none;">#ffc6a5</span>
+                    <span>#ffc6a5</span>
                 </div>
                 <div class="color-swatch" style="background-color: #B4F8C8;">
                     <span style="color: #333; text-shadow: none;">#b4f8c8</span>
@@ -474,9 +463,10 @@
                     <p style="font-size: 1.125rem; margin-bottom: 2rem;"><strong>tilt warp</strong><br>a playful sans serif font that captures brushing buddies' energetic and youthful personality while maintaining excellent readability.</p>
                     
                     <h3>body text font</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 0;"><strong>poppins</strong><br>a clean, geometric sans serif that complements tilt warp perfectly while ensuring clear, comfortable reading for all content.</p>
+                    <p style="font-size: 1.125rem;"><strong>poppins</strong><br>a clean, geometric sans serif that complements tilt warp perfectly while ensuring clear, comfortable reading for all content.</p>
                 </div>
-                <div class="font-card" style="text-align: center;">
+                <!-- justify-content:center kept for desktop vertical centering; overridden to block on mobile -->
+                <div class="font-card font-card-preview" style="display: flex; flex-direction: column; justify-content: center;">
                     <div class="display" style="font-family: 'Tilt Warp', sans-serif; font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem;">brushing buddies</div>
                     <p style="font-family: 'Poppins', sans-serif; font-size: 1.25rem; line-height: 1.6; margin: 0; font-weight: 400;">the brushing buddies book plays classic children's songs with 'ahhh' lyrics so kids sing along and keep mouths open.</p>
                 </div>
