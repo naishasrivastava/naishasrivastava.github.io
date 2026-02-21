@@ -335,15 +335,23 @@
 
             .typography-section {
                 grid-template-columns: 1fr;
+                align-items: start;
             }
 
             /* On mobile, undo the flex centering so the card is just natural height */
-            .font-card-preview {
-                display: block !important;
+            .font-card {
+                padding: 2rem;
+                display: block;
+                height: auto;
+                
             }
 
             .project-info {
                 grid-template-columns: 1fr;
+            }
+
+            .info-item.team {
+                grid-column: 1;
             }
         }
     </style>
