@@ -211,17 +211,18 @@
             .hero-card { padding: 2rem; }
             .contact-card { padding: 2rem; }
 
-            /* Hero: full viewport, perfectly centered below nav */
+            /* Hero: centered in the space below the nav */
             #home {
-                height: 100vh;
+                min-height: 100svh;
+                height: 100svh;
+                padding: 0 1rem;
                 padding-top: 64px;
-                padding-left: 1rem;
-                padding-right: 1rem;
-                padding-bottom: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
+            #home h1 { font-size: 2.5rem; }
+            #home .tagline { font-size: 1.1rem; }
 
             /* Playground: single column on phone */
             .playground-grid {
@@ -553,7 +554,7 @@
             <div class="contact-card">
                 <p class="contact-text">open to new opportunities, collaborations, and conversations about tech and design</p>
                 <div class="contact-links">
-                    <a href="mailto:ns2229@cornell.edu" class="contact-btn email">
+                    <a href="/cdn-cgi/l/email-protection#107e632222222950737f627e757c7c3e757465" class="contact-btn email">
                         <span>✉</span><span>email</span>
                     </a>
                     <a href="https://www.linkedin.com/in/naishasrivastava" target="_blank" rel="noopener noreferrer" class="contact-btn linkedin">
@@ -568,7 +569,7 @@
         </div>
     </section>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
@@ -609,9 +610,3 @@
                 }
             });
         }
-
-        window.addEventListener('scroll', updateActiveNav);
-        window.addEventListener('load', updateActiveNav);
-    </script>
-</body>
-</html>
