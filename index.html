@@ -52,7 +52,8 @@
         .mobile-menu a.active { color: #1d4ed8; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
         #home {
-            height: 100vh;
+            height: 100svh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -206,6 +207,23 @@
         .contact-btn.github { background: #fef3c7; color: #78350f; }
         .contact-btn:hover { transform: translateY(-2px); box-shadow: 6px 6px 0px rgba(120,53,15,0.3); }
         footer { border-top: 2px solid #78350f; padding-top: 2rem; text-align: center; color: #92400e; font-size: 0.875rem; font-weight: 700; text-transform: lowercase; }
+
+        /* iPad / tablet fixes */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            #home {
+                height: 100svh;
+                min-height: 100svh;
+                padding-top: 72px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .playground-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 3rem; }
+        }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
