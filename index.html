@@ -210,13 +210,18 @@
 
         /* iPad / tablet fixes */
         @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.85rem; }
+            .nav-logo { font-size: 1.1rem; }
             #home {
                 height: 100svh;
                 min-height: 100svh;
+                padding: 0 1.5rem;
                 padding-top: 72px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                box-sizing: border-box;
             }
             .playground-grid {
                 grid-template-columns: repeat(2, 1fr);
