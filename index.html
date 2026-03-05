@@ -169,10 +169,6 @@
         .play-card:nth-child(6) { transform: rotate(0.6deg); }
         .play-card:nth-child(7) { transform: rotate(-1.2deg); }
         .play-card:nth-child(8) { transform: rotate(0.7deg); }
-        .play-card:nth-child(9) { transform: rotate(-.8deg); }
-        .play-card:nth-child(10) { transform: rotate(1deg); }
-        .play-card:nth-child(11) { transform: rotate(-0.4deg); }
-        .play-card:nth-child(12) { transform: rotate(1.2deg); }
         .play-card:hover {
             box-shadow: 10px 10px 0px rgba(120,53,15,0.25);
             transform: translateY(-3px) rotate(0deg);
@@ -189,6 +185,42 @@
         .play-title { font-size: 1.875rem; font-weight: 900; text-transform: lowercase; color: #78350f; margin: 0; }
         .play-arrow { font-size: 1.75rem; color: #2563eb; font-weight: 900; flex-shrink: 0; line-height: 1; }
         .play-desc { font-size: 0.9rem; color: #92400e; text-transform: lowercase; line-height: 1.6; }
+
+        /* Continue exploring button */
+        .playground-footer {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        .continue-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-weight: 900;
+            font-size: 1.125rem;
+            text-transform: lowercase;
+            text-decoration: none;
+            background: #fef3c7;
+            color: #78350f;
+            border: 2px solid #78350f;
+            box-shadow: 6px 6px 0px rgba(120,53,15,0.2);
+            transition: all 0.3s;
+            transform: rotate(-0.5deg);
+        }
+        .continue-btn:hover {
+            background: #fde68a;
+            box-shadow: 10px 10px 0px rgba(120,53,15,0.3);
+            transform: translateY(-2px) rotate(0deg);
+        }
+        .continue-btn .arrow {
+            font-size: 1.25rem;
+            color: #2563eb;
+            transition: transform 0.3s;
+        }
+        .continue-btn:hover .arrow {
+            transform: translateX(4px);
+        }
 
         .contact-card {
             background: rgba(255,255,255,0.9); padding: 4rem; border: 2px solid #78350f;
@@ -265,11 +297,7 @@
             .play-card:nth-child(5),
             .play-card:nth-child(6),
             .play-card:nth-child(7),
-            .play-card:nth-child(8),
-            .play-card:nth-child(9),
-            .play-card:nth-child(10),
-            .play-card:nth-child(11),
-            .play-card:nth-child(12)
+            .play-card:nth-child(8)
             {
                 transform: none;
             }
@@ -562,36 +590,12 @@
                     <p class="play-desc">a hand-tracking particle system built with ml5.js, where each keypoint becomes a source of animated particles, causing dynamic, ephemeral visuals that respond to movement</p>
                 </a>
 
-                <a href="https://naishasrivastava.github.io/aether" target="_blank" rel="noopener noreferrer" class="play-card">
-                    <div class="play-header">
-                        <div class="play-title">aether</div>
-                        <span class="play-arrow">→</span>
-                    </div>
-                    <p class="play-desc">a particle simulation environment where elements drift, collide, and spark, forming vivid visuals that respond intuitively and blur the line between physics and art</p>
-                </a>
-
-                <a href="https://naishasrivastava.github.io/starstruck" target="_blank" rel="noopener noreferrer" class="play-card">
-                    <div class="play-header">
-                        <div class="play-title">starstruck</div>
-                        <span class="play-arrow">→</span>
-                    </div>
-                    <p class="play-desc">a starfield that responds to cursor movement and clicks, letting stars be placed, connected, and traced into patterns that form constellations across the digital cosmos</p>
-                </a>
-                
                 <a href="https://naishasrivastava.github.io/borealis" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">borealis</div>
                         <span class="play-arrow">→</span>
                     </div>
                     <p class="play-desc">a fluid particle simulation that sculpts glowing trails across a digital cosmos — particles drift, collide, and fade as you hold and drag, producing visuals that feel alive</p>
-                </a>
-
-                <a href="https://naishasrivastava.github.io/hypnotic" target="_blank" rel="noopener noreferrer" class="play-card">
-                    <div class="play-header">
-                        <div class="play-title">hypnotic</div>
-                        <span class="play-arrow">→</span>
-                    </div>
-                    <p class="play-desc">a collection of generative meditations that create immersive visual patterns and calming motion, inviting exploration through interaction and subtle visual transformation</p>
                 </a>
 
                 <a href="https://naishasrivastava.github.io/tarot" target="_blank" rel="noopener noreferrer" class="play-card">
@@ -602,14 +606,13 @@
                     <p class="play-desc">a digital tarot experience that lets you draw a Major Arcana card for insight, inviting reflection and introspection through simple interaction with archetypal symbolism</p>
                 </a>
 
-                <a href="https://naishasrivastava.github.io/synthscape" target="_blank" rel="noopener noreferrer" class="play-card">
-                    <div class="play-header">
-                        <div class="play-title">synthscape</div>
-                        <span class="play-arrow">→</span>
-                    </div>
-                    <p class="play-desc">a neon skyline that pulses to music in real-time — upload tracks, use your mic, or demo sounds as buildings glow, lights flicker, and the cityscape shifts with the rhythm</p>
-                </a>
+            </div>
 
+            <div class="playground-footer">
+                <a href="playground.html" class="continue-btn">
+                    continue exploring
+                    <span class="arrow">→</span>
+                </a>
             </div>
         </div>
     </section>
