@@ -6,6 +6,10 @@
     <title>Naisha Srivastava - Portfolio</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
+        /* ── Hide Scrollbar ── */
+        ::-webkit-scrollbar { display: none; }
+        * { scrollbar-width: none; }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -186,7 +190,6 @@
         .play-arrow { font-size: 1.75rem; color: #2563eb; font-weight: 900; flex-shrink: 0; line-height: 1; }
         .play-desc { font-size: 0.9rem; color: #92400e; text-transform: lowercase; line-height: 1.6; }
 
-        /* Continue exploring button */
         .playground-footer {
             margin-top: 2.5rem;
             display: flex;
@@ -240,7 +243,6 @@
         .contact-btn:hover { transform: translateY(-2px); box-shadow: 6px 6px 0px rgba(120,53,15,0.3); }
         footer { border-top: 2px solid #78350f; padding-top: 2rem; text-align: center; color: #92400e; font-size: 0.875rem; font-weight: 700; text-transform: lowercase; }
 
-        /* iPad / tablet fixes */
         @media (min-width: 769px) and (max-width: 1024px) {
             .nav-links { gap: 1rem; }
             .nav-links a { font-size: 0.85rem; }
@@ -255,9 +257,7 @@
                 justify-content: center;
                 box-sizing: border-box;
             }
-            .playground-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .playground-grid { grid-template-columns: repeat(2, 1fr); }
             h1 { font-size: 3.5rem; }
             h2 { font-size: 3rem; }
         }
@@ -269,8 +269,6 @@
             h2 { font-size: 2.5rem; }
             .hero-card { padding: 2rem; }
             .contact-card { padding: 2rem; }
-
-            /* Hero: centered in the space below the nav */
             #home {
                 min-height: 100svh;
                 height: 100svh;
@@ -282,14 +280,7 @@
             }
             #home h1 { font-size: 2.5rem; }
             #home .tagline { font-size: 1.1rem; }
-
-            /* Playground: single column on phone */
-            .playground-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-            }
-
-            /* Reset card tilts on mobile so they don't overflow */
+            .playground-grid { grid-template-columns: 1fr; gap: 1.25rem; }
             .play-card:nth-child(1),
             .play-card:nth-child(2),
             .play-card:nth-child(3),
@@ -297,10 +288,7 @@
             .play-card:nth-child(5),
             .play-card:nth-child(6),
             .play-card:nth-child(7),
-            .play-card:nth-child(8)
-            {
-                transform: none;
-            }
+            .play-card:nth-child(8) { transform: none; }
         }
 
         .label a { color: inherit; text-decoration: none; }
@@ -444,7 +432,6 @@
         <div class="container">
             <h2 style="transform: rotate(1deg);">projects</h2>
             <div class="grid project-grid">
-
                 <div class="project-card">
                     <a href="brushing-buddies.html" style="text-decoration: none; color: inherit;">
                         <div class="project-header">
@@ -455,7 +442,6 @@
                         <p class="project-desc">developed cohesive brand identity including curriculum materials and website prototypes</p>
                     </a>
                 </div>
-
                 <div class="project-card">
                     <a href="https://readymag.website/naishasrivastava/walksafe/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                         <div class="project-header">
@@ -466,7 +452,6 @@
                         <p class="project-desc">led team to create an online platform connecting individuals with volunteer phone companions for safety</p>
                     </a>
                 </div>
-
                 <div class="project-card">
                     <a href="https://naishasrivastava.webflow.io/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                         <div class="project-header">
@@ -477,7 +462,6 @@
                         <p class="project-desc">curated collection of film photography work exploring composition, lighting, and visual storytelling</p>
                     </a>
                 </div>
-
                 <div class="project-card">
                     <a href="https://naishasrivastava.wordpress.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                         <div class="project-header">
@@ -488,18 +472,16 @@
                         <p class="project-desc">a living archive of essays, cultural musings, fleeting thoughts, and the ideas that linger far longer than expected</p>
                     </a>
                 </div>
-
                 <div class="project-card">
                     <a href="https://naishasrivastava.github.io/ledger" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-                    <div class="project-header">
-                        <h3 class="project-title">ledger</h3>
-                        <span style="font-size: 1.75rem; color: white;">→</span>
-                    </div>
-                    <div class="project-role">personal finance tracker</div>
-                    <p class="project-desc">designed a comprehensive personal finance tracker to monitor income, expenses, and overall financial health, including intuitive dashboards, interactive charts, and quick data export</p>
-                        </a>
+                        <div class="project-header">
+                            <h3 class="project-title">ledger</h3>
+                            <span style="font-size: 1.75rem; color: white;">→</span>
+                        </div>
+                        <div class="project-role">personal finance tracker</div>
+                        <p class="project-desc">designed a comprehensive personal finance tracker to monitor income, expenses, and overall financial health, including intuitive dashboards, interactive charts, and quick data export</p>
+                    </a>
                 </div>
-
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">robotics programming</h3>
@@ -507,7 +489,6 @@
                     <div class="project-role">carroll robotics team captain</div>
                     <p class="project-desc">developed advanced algorithms optimizing robot performance with 80+ pages of documentation</p>
                 </div>
-
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">camp invention leadership</h3>
@@ -515,7 +496,6 @@
                     <div class="project-role">lead intern</div>
                     <p class="project-desc">oversaw STEM activities for 25+ elementary campers, mentored new interns and ensured inclusive participation</p>
                 </div>
-
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">ar workshop research</h3>
@@ -523,7 +503,6 @@
                     <div class="project-role">university of texas</div>
                     <p class="project-desc">participated in workshop to create intuitive 3D interfaces with focus on accessibility and immersion in spatial environments</p>
                 </div>
-
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">financial analysis project</h3>
@@ -531,7 +510,6 @@
                     <div class="project-role">charles schwab intern</div>
                     <p class="project-desc">analyzed how investments and economic policies influence city growth, sustainability, and long-term development</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -541,7 +519,6 @@
             <h2 style="transform: rotate(-1deg);">playground</h2>
             <span class="playground-intro"></span>
             <div class="playground-grid">
-
                 <a href="https://naishasrivastava.github.io/iris" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">irisgram</div>
@@ -549,7 +526,6 @@
                     </div>
                     <p class="play-desc">an interactive music visualization that transforms audio frequencies into dynamic, rotating radial patterns, allowing users to generate and export unique digital artwork</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/pixelate" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">pixelate</div>
@@ -557,7 +533,6 @@
                     </div>
                     <p class="play-desc">a square-by-square drawing environment that gradually develops a blank grid into complete pixel artwork, with each colored box contributing to the bigger picture</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/kaleido" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">kaleido</div>
@@ -565,7 +540,6 @@
                     </div>
                     <p class="play-desc">a drawing tool that mirrors each stroke into symmetrical kaleidoscope patterns, simple gestures seamlessly turn into evolving geometric compositions</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/backdrop" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">backdrop</div>
@@ -573,7 +547,6 @@
                     </div>
                     <p class="play-desc">a color-driven background generator that explores palettes and combinations to produce rich, abstract visuals, blending hues and textures into dynamic digital canvases</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/bloom" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">bloom</div>
@@ -581,7 +554,6 @@
                     </div>
                     <p class="play-desc">a hand-tracking digital flower powered by ml5.js, where opening the hand makes the flower blossom and closing it causes it to wilt, creating a responsive visual experience</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/pulse" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">pulse</div>
@@ -589,7 +561,6 @@
                     </div>
                     <p class="play-desc">a hand-tracking particle system built with ml5.js, where each keypoint becomes a source of animated particles, causing dynamic, ephemeral visuals that respond to movement</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/borealis" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">borealis</div>
@@ -597,7 +568,6 @@
                     </div>
                     <p class="play-desc">a fluid particle simulation that sculpts glowing trails across a digital cosmos — particles drift, collide, and fade as you hold and drag, producing visuals that feel alive</p>
                 </a>
-
                 <a href="https://naishasrivastava.github.io/tarot" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
                         <div class="play-title">tarot</div>
@@ -605,9 +575,7 @@
                     </div>
                     <p class="play-desc">a digital tarot experience that lets you draw a Major Arcana card for insight, inviting reflection and introspection through simple interaction with archetypal symbolism</p>
                 </a>
-
             </div>
-
             <div class="playground-footer">
                 <a href="playground.html" class="continue-btn">
                     continue exploring
