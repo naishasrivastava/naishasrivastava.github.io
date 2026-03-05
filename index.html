@@ -7,8 +7,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         /* ── Hide Scrollbar ── */
-        ::-webkit-scrollbar { display: none; }
-        * { scrollbar-width: none; }
+        html, body, * { scrollbar-width: none; -ms-overflow-style: none; }
+        html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -649,6 +649,13 @@
         }
         window.addEventListener('scroll', updateActiveNav);
         window.addEventListener('load', updateActiveNav);
+    </script>
+    <script>
+      // Re-hide scrollbar on back/forward navigation (bfcache restore)
+      window.addEventListener('pageshow', function(e) {
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'auto';
+      });
     </script>
 </body>
 </html>
