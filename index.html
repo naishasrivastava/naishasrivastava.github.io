@@ -650,12 +650,11 @@
         window.addEventListener('scroll', updateActiveNav);
         window.addEventListener('load', updateActiveNav);
     </script>
-    <!-- <script>
-      // Re-hide scrollbar on back/forward navigation (bfcache restore)
-      window.addEventListener('pageshow', function(e) {
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'auto';
-      }); -->
+    <script>
+      window.addEventListener('pageshow', function() {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      });
     </script>
 </body>
 </html>
