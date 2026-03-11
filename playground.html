@@ -67,6 +67,42 @@
             opacity: 0.2;
         }
 
+        /* Random button */
+        .random-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.75rem;
+            padding: 0.7rem 1.6rem;
+            background: #2563eb;
+            color: white;
+            font-family: inherit;
+            font-weight: 900;
+            font-size: 0.95rem;
+            text-transform: lowercase;
+            border: 2px solid #78350f;
+            box-shadow: 4px 4px 0px rgba(120,53,15,0.25);
+            cursor: pointer;
+            transition: box-shadow 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+        .random-btn:hover {
+            box-shadow: 7px 7px 0px rgba(120,53,15,0.3);
+            transform: translateY(-2px);
+        }
+        .random-btn:active {
+            transform: translateY(1px);
+            box-shadow: 2px 2px 0px rgba(120,53,15,0.2);
+        }
+        .random-btn .dice {
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .random-btn:hover .dice {
+            transform: rotate(20deg) scale(1.2);
+        }
+
         /* Main grid */
         .playground-section {
             padding: 0 1.5rem 8rem;
@@ -181,12 +217,15 @@
         <div class="container" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <div class="page-heading"><span style="color: #2563eb;">play</span>ground</div>
             <p class="hero-sub">a collection of interactive experiments where code meets curiosity — built for fun, exploration, and the joy of making things move</p>
+            <button class="random-btn" onclick="openRandom()">
+                <span class="dice">🎲</span> feeling lucky?
+            </button>
         </div>
     </div>
 
     <div class="playground-section">
         <div class="container">
-            <div class="playground-grid">
+            <div class="playground-grid" id="playground-grid">
 
                 <a href="https://naishasrivastava.github.io/iris" target="_blank" rel="noopener noreferrer" class="play-card">
                     <div class="play-header">
@@ -325,5 +364,12 @@
         <a href="index.html" class="back-link">← back to portfolio</a>
     </footer>
 
+    <script>
+        function openRandom() {
+            const cards = document.querySelectorAll('#playground-grid .play-card');
+            const pick = cards[Math.floor(Math.random() * cards.length)];
+            window.open(pick.href, '_blank');
+        }
+    </script>
 </body>
 </html>
