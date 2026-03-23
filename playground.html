@@ -190,11 +190,16 @@
         }
         footer .back-link:hover { color: #78350f; }
 
-        /* Tablet */
-        @media (min-width: 769px) and (max-width: 1180px) {
-            .playground-grid { grid-template-columns: repeat(3, 1fr); }
-            h1 { font-size: 3.5rem; }
+        /* iPad portrait */
+        @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+            .playground-grid { grid-template-columns: repeat(2, 1fr); }
         }
+        
+        /* iPad landscape */
+        @media (min-width: 769px) and (max-width: 1180px) and (orientation: landscape) {
+            .playground-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
 
         /* Mobile */
         @media (max-width: 768px) {
