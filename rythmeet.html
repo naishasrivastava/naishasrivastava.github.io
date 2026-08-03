@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rythmeet x Praxis - Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fffbeb;
+            color: #78350f;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulance type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #78350f;
+            z-index: 50;
+            padding: 1.5rem 2rem;
+        }
+
+        .back-link {
+            font-weight: 700;
+            text-transform: lowercase;
+            color: #78350f;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: lowercase;
+            color: #78350f;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 .highlight {
+            color: #1d4ed8;
+        }
+
+        .hero .subtitle {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 3rem;
+            text-transform: lowercase;
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border: 2px solid #78350f;
+            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
+            text-align: left;
+        }
+
+        .info-item.team {
+            grid-column: 1 / 3;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 1rem;
+            text-transform: lowercase;
+            font-weight: 900;
+            color: #1d4ed8;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            font-size: 1.125rem;
+            color: #78350f;
+            text-transform: lowercase;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: lowercase;
+            color: #78350f;
+            margin-bottom: 3rem;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid #1d4ed8;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: lowercase;
+            color: #1d4ed8;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #92400e;
+            margin-bottom: 1.5rem;
+            text-transform: lowercase;
+        }
+
+        .scope-box {
+            background: white;
+            padding: 3rem;
+            border: 2px solid #78350f;
+            box-shadow: 8px 8px 0px rgba(120, 53, 15, 0.2);
+            margin: 2rem 0;
+        }
+
+        .scope-box .label {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #1d4ed8;
+            text-transform: lowercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .scope-box p {
+            font-size: 1.375rem;
+            color: #78350f;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .week-badge {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-weight: 900;
+            text-transform: lowercase;
+            border: 2px solid #78350f;
+            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.2);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border: 2px solid #78350f;
+            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.15);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 6px 6px 0px rgba(120, 53, 15, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .card h4 {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #78350f;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+
+        .card img {
+            width: calc(100% + 4rem);
+            height: auto;
+            margin: 0 -2rem 1.5rem -2rem;
+            border: none;
+        }
+
+        .card p {
+            margin: 0;
+        }
+
+        .highlight-text {
+            background: #fef3c7;
+            padding: 0.1rem 0.4rem;
+            font-weight: 700;
+        }
+
+        .team-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .team-list li {
+            display: inline-block;
+            background: #fef3c7;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border: 1px solid #78350f;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: white;
+            border-top: 2px solid #78350f;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #92400e;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: lowercase;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .back-link {
+            color: #1d4ed8;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .project-info {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item.team {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="back-link">← back to portfolio</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>rythmeet<br><span class="highlight">x praxis</span></h1>
+            <p class="subtitle">streamlining user experience through simplified flows</p>
+            
+            <div class="project-info">
+                <div class="info-item">
+                    <strong>timeline:</strong>
+                    <p>spring 2026</p>
+                </div>
+                <div class="info-item">
+                    <strong>role:</strong>
+                    <p>primary designer</p>
+                </div>
+                <div class="info-item team">
+                    <strong>team:</strong>
+                    <p>pm & design lead: julia lau<br>primary designers: kelly chen, naisha srivastava, stephanie lin<br>contributors: amber lee, catherine mao, johanna kim, katie li, yeji moon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>project scope</h2>
+            <div class="scope-box">
+                <span class="label">the goal:</span>
+                <p>to streamline rythmeet's user experience by simplifying user flows and establishing consistent ui across the website</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <span class="week-badge">week 1-2</span>
+            <h2>website design critique</h2>
+            <p>our designers started by evaluating the current state of rythmeet's website and presented their critiques with a focus on user flows of the sign-up process, editing profile, creating events, and accessing dashboard stats.</p>
+            
+            <p>based on their critiques, designers presented their <span class="highlight-text">proposed user flow diagram</span> that would streamline the user experience. due to time constraints, we initially established our project scope to be improving the create profile user flow and create events user flow.</p>
+        </section>
+
+        <section class="section">
+            <span class="week-badge">week 3-6</span>
+            <h2>user flow re-design & prototyping</h2>
+            <p>next, designers finalized the improved user flow diagrams and began prototyping these changes with mid to high fidelity wireframes, ensuring consistency and simplicity were maintained throughout all pages.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>sign-up flow</h4>
+                    <p>the updated sign-up flow was improved by consolidating sign-up steps, including an animated visual progress indicator, and maintaining a <span class="highlight-text">modular, clean yet unique ui</span> to the onboarding process.</p>
+                </div>
+                <div class="card">
+                    <h4>create/edit events flow</h4>
+                    <p>the updated create/edit events user flow was improved by placing emphasis on being able to quickly create and edit events. to achieve this, we utilized a pop-up window from the original page, as opposed to being redirected to new page, and streamlined the options event organizers could choose.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <span class="week-badge">week 7-8</span>
+            <h2>dashboard re-design & branding</h2>
+            <p>with our project scope completed, our team broke off into two teams to tackle two more projects: to continue re-design process of the dashboard & to update rythmeet's branding guidelines to elevate its current state.</p>
+
+            <h3>dashboard redesign</h3>
+            <p>the professional essence of the original dashboard was preserved, but our main goal was to allow the user to easily switch between the different dashboards for a different role (e.g. musician to band). we also introduced tabs, reduced the amount of metrics displayed per tab, and changed it to be an <span class="highlight-text">at-a-glance, non-scrollable page</span>.</p>
+
+            <h3>updated branding guidelines</h3>
+            <p>we created an updated branding guideline that included more pastel colors and suggests incorporating gradients as a new part of their brand identity that promotes the idea of harmony and of connecting users over their shared connection of music.</p>
+        </section>
+
+        <section class="section">
+            <h2>impact & learnings</h2>
+            <p>this project taught us the value of iterative design—starting with critique, moving through structured user flow improvements, and finishing with a cohesive branding system. working across a large, cross-functional team required clear communication and modular design thinking to keep every page consistent.</p>
+            
+            <p>by focusing on simplification at every step—from onboarding to dashboards—we helped rythmeet create a more intuitive, harmonious experience that reflects its mission of connecting people through music.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 naisha srivastava</p>
+        <a href="index.html" class="back-link">← back to portfolio</a>
+    </footer>
+</body>
+</html>
