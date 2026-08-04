@@ -101,10 +101,6 @@
             text-align: left;
         }
 
-        .info-item.team {
-            grid-column: 1 / 3;
-        }
-
         .info-item strong {
             display: block;
             font-size: 1rem;
@@ -194,13 +190,13 @@
             width: fit-content;
             background: #2563eb;
             color: white;
-            padding: 0.25rem 0.85rem;
+            padding: 0.5rem 1.4rem;
             font-weight: 900;
             text-transform: lowercase;
             border: 2px solid #78350f;
-            box-shadow: 2px 2px 0px rgba(120, 53, 15, 0.2);
-            margin-bottom: 0.5rem;
-            font-size: 0.7rem;
+            box-shadow: 3px 3px 0px rgba(120, 53, 15, 0.2);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
             letter-spacing: 0.02em;
         }
 
@@ -253,16 +249,89 @@
             margin: 2rem 0;
         }
 
-        .full-image-card img {
+        .full-image-card img,
+        .full-image-card video {
             width: 100%;
             height: auto;
             display: block;
+            margin: 0 auto 1.5rem auto;
             border: 2px solid #78350f;
-            margin-bottom: 1.5rem;
         }
 
         .full-image-card p {
             margin: 0;
+        }
+
+        .image-title {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #78350f;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+
+        .detail-row {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: stretch;
+        }
+
+        .detail-row .image-box {
+            background: white;
+            border: 2px solid #78350f;
+            box-shadow: 6px 6px 0px rgba(120, 53, 15, 0.2);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-row .image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #78350f;
+        }
+
+        .detail-row .detail-text {
+            background: white;
+            border: 2px solid #78350f;
+            box-shadow: 6px 6px 0px rgba(120, 53, 15, 0.2);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .detail-text ul li {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #92400e;
+            text-transform: lowercase;
+            padding-left: 1.25rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-row.wide {
+            grid-template-columns: 1.6fr 1fr;
+        }
+
+        .detail-text ul li::before {
+            content: "•";
+            color: #1d4ed8;
+            font-weight: 900;
+            position: absolute;
+            left: 0;
         }
 
         .insights-list {
@@ -290,7 +359,6 @@
             font-size: 1rem;
             color: #92400e;
             text-transform: lowercase;
-            font-style: italic;
             margin-top: -1rem;
         }
 
@@ -355,9 +423,9 @@
                     <strong>role:</strong>
                     <p>primary designer</p>
                 </div>
-                <div class="info-item team">
+                <div class="info-item">
                     <strong>team:</strong>
-                    <p>julia lau, kelly chen, naisha srivastava, stephanie lin, amber lee, catherine mao, johanna kim, katie li, yeji moon</p>
+                    <p>julia lau, kelly chen, naisha srivastava, stephanie lin, amber lee, catherine mao, johanna kim, katie li</p>
                 </div>
             </div>
         </div>
@@ -396,22 +464,31 @@
         <section class="section">
             <span class="phase-badge">weeks 3-6</span>
             <h2>sign-up flow redesign</h2>
-            <p>the sign-up flow was rebuilt by consolidating steps, adding a visual progress indicator, and keeping a modular, clean yet distinct ui throughout onboarding.</p>
+            <p>two directions for the sign-up flow were explored side by side, each testing a different balance of speed versus upfront personalization.</p>
 
             <div class="grid-2">
                 <div class="card">
-                    <h4>before</h4>
-                    <img src="rpics/Sign%20Up%20V1.png" alt="original rythmeet sign-up screen">
-                    <p>a single email and password form with minimal guidance on what comes next.</p>
+                    <h4>version 1</h4>
+                    <img src="rpics/Sign%20Up%20V1.png" alt="sign up version 1 with email and password fields">
+                    <ul style="margin:0; padding-left:1.1rem; color:#92400e; font-size:1.0625rem; line-height:1.7; text-transform:lowercase;">
+                        <li>only email and password are collected up front</li>
+                        <li>google sign-in sits below the form as a secondary option</li>
+                        <li>fastest possible path to a created account, with personalization left for later</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h4>after (v2)</h4>
-                    <img src="rpics/Sign%20Up%20V2.png" alt="redesigned sign-up screen collecting full name, date of birth, email, and password">
-                    <p>a cleaner single-screen version that gathers full name and date of birth up front, alongside a google sign-in option.</p>
+                    <h4>version 2</h4>
+                    <img src="rpics/Sign%20Up%20V2.png" alt="sign up version 2 with full name, date of birth, email, and password fields">
+                    <ul style="margin:0; padding-left:1.1rem; color:#92400e; font-size:1.0625rem; line-height:1.7; text-transform:lowercase;">
+                        <li>full name and date of birth are collected alongside email and password</li>
+                        <li>google sign-in is promoted to the top of the form as the fastest option</li>
+                        <li>a warmer, photography-forward layout echoes rythmeet's "where music connects" brand tone</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="full-image-card">
+                <h4 class="image-title">step-by-step onboarding</h4>
                 <img src="rpics/Basic%20Information.png" alt="multi-step onboarding flow selecting role, genre, and vocalist details">
                 <p class="caption">the multi-step direction: role selection, genre, and skill details are broken into focused steps with a progress slider, ending on a playful "turn it up" confirmation screen.</p>
             </div>
@@ -422,14 +499,35 @@
             <h2>create/edit events flow</h2>
             <p>the create/edit events flow was redesigned around speed. a pop-up window replaced the original full-page redirect, and the number of options an organizer has to sort through at each step was streamlined.</p>
 
-            <div class="full-image-card">
-                <img src="rpics/Creating%20Events%20%28Entry%20Point%29.png" alt="event organizer profile with create event entry point">
-                <p class="caption">event creation now lives directly on an organizer's profile, next to their upcoming events, location, and impact stats.</p>
+            <h3>event entry point</h3>
+            <div class="detail-row">
+                <div class="image-box">
+                    <img src="rpics/Creating%20Events%20%28Entry%20Point%29.png" alt="event organizer profile with create event entry point">
+                </div>
+                <div class="detail-text">
+                    <h4 class="image-title">why this layout</h4>
+                    <ul>
+                        <li>the create event button lives directly on the organizer's own profile, next to their existing events, so there's no separate dashboard to dig through</li>
+                        <li>impact stats (total attendees, events created) sit right beside the button to reinforce momentum and encourage repeat use</li>
+                        <li>the venue map stays on the same page so organizers can confirm location details before starting event creation</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="full-image-card">
-                <img src="rpics/Create%20Event.png" alt="four step create event pop-up: details, schedule, registration, logistics">
-                <p class="caption">a four-step pop-up — details, schedule, registration, and logistics — keeps organizers on the same page instead of bouncing them across the site.</p>
+            <h3>quick-create pop-up</h3>
+            <div class="detail-row wide">
+                <div class="image-box">
+                    <img src="rpics/Create%20Event.png" alt="four step create event pop-up: details, schedule, registration, logistics">
+                </div>
+                <div class="detail-text">
+                    <h4 class="image-title">why this layout</h4>
+                    <p style="margin-bottom:1rem;">the pop-up is broken into four steps: details, schedule, registration, and logistics. this keeps organizers on the same page instead of bouncing them across the site.</p>
+                    <ul>
+                        <li>a pop-up was chosen over a full-page redirect so organizers never lose their place on their profile</li>
+                        <li>registration type and cancellation policy are decided in one step, instead of being buried in separate settings</li>
+                        <li>equipment defaults to "provided by venue" to cut down on repetitive data entry for touring artists</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -443,7 +541,7 @@
 
             <div class="full-image-card">
                 <img src="rpics/Dashboard.png" alt="dashboard mockups across musician, band, studio, and event roles">
-                <p class="caption">dashboards for every role — musician, band, studio, and event organizer — each with dedicated activity and growth tabs.</p>
+                <p class="caption">every role gets its own dashboard: musician, band, studio, and event organizer, each with dedicated activity and growth tabs.</p>
             </div>
 
             <h3>profile switching</h3>
@@ -464,6 +562,15 @@
 
             <h3>updated branding guidelines</h3>
             <p>the guidelines were refreshed with more pastel colors and gradients folded into the identity system, reinforcing the idea of harmony and of connecting people through their shared love of music.</p>
+
+            <div class="full-image-card">
+                <h4 class="image-title">branding walkthrough</h4>
+                <video controls>
+                    <source src="rpics/Branding%20Guidelines.mp4" type="video/mp4">
+                    your browser does not support embedded video.
+                </video>
+                <p class="caption">a walkthrough of the updated brand system: color palette, gradient usage, and type stack.</p>
+            </div>
         </section>
 
         <section class="section">
@@ -491,9 +598,9 @@
 
         <section class="section">
             <h2>impact & learnings</h2>
-            <p>this project reinforced the value of iterative design — starting with critique, moving through structured user flow improvements, and finishing with a cohesive branding system. working across a large, cross-functional team required clear communication and modular design thinking to keep every page consistent.</p>
+            <p>this project reinforced the value of iterative design: starting with critique, moving through structured user flow improvements, and finishing with a cohesive branding system. working across a large, cross-functional team required clear communication and modular design thinking to keep every page consistent.</p>
 
-            <p>by focusing on simplification at every step, from onboarding to dashboards, the redesign helped rythmeet feel more intuitive and harmonious — better reflecting its mission of connecting people through music.</p>
+            <p>by focusing on simplification at every step, from onboarding to dashboards, the redesign helped rythmeet feel more intuitive and harmonious, better reflecting its mission of connecting people through music.</p>
         </section>
     </div>
 
