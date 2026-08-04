@@ -57,6 +57,7 @@
         }
 
         .hero-content {
+            width: 100%;
             max-width: 1000px;
         }
 
@@ -86,7 +87,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin-top: 3rem;
-            max-width: 900px;
+            width: 900px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -118,6 +120,11 @@
             text-transform: lowercase;
             margin: 0;
             line-height: 1.4;
+        }
+
+        .info-item.team p {
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .container {
@@ -182,14 +189,19 @@
             text-transform: lowercase;
         }
 
-        .phase-label {
+        .phase-badge {
             display: block;
-            font-size: 1rem;
+            width: fit-content;
+            background: #2563eb;
+            color: white;
+            padding: 0.25rem 0.85rem;
             font-weight: 900;
-            color: #1d4ed8;
             text-transform: lowercase;
-            letter-spacing: 0.03em;
-            margin-bottom: 1rem;
+            border: 2px solid #78350f;
+            box-shadow: 2px 2px 0px rgba(120, 53, 15, 0.2);
+            margin-bottom: 0.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.02em;
         }
 
         .grid-2 {
@@ -231,10 +243,6 @@
 
         .card p {
             margin: 0;
-        }
-
-        .card p + p {
-            margin-top: 1rem;
         }
 
         .full-image-card {
@@ -341,7 +349,7 @@
             <div class="project-info">
                 <div class="info-item">
                     <strong>timeline:</strong>
-                    <p>spring 2026</p>
+                    <p>jan 2026 - may 2026</p>
                 </div>
                 <div class="info-item">
                     <strong>role:</strong>
@@ -371,7 +379,7 @@
         </section>
 
         <section class="section">
-            <span class="phase-label">weeks 1-2</span>
+            <span class="phase-badge">weeks 1-2</span>
             <h2>research & critique</h2>
             <p>the process started with a full evaluation of rythmeet's existing website, with critique focused on four core flows: signing up, editing a profile, creating events, and reading dashboard stats.</p>
 
@@ -382,85 +390,80 @@
                 <li><strong>dashboard stats:</strong> dense, scroll-heavy, and hard to scan at a glance</li>
             </ul>
 
-            <div class="full-image-card">
-                <img src="research-critique.png" alt="critique notes, early mockups, and user flow diagrams">
-                <p class="caption">critique notes, early mockups, and the user flow diagrams that framed the redesign.</p>
-            </div>
-
             <p>the critique led to a proposed user flow diagram meant to streamline the experience end to end. given time constraints, the project scope was initially narrowed to two flows: creating a profile and creating an event.</p>
         </section>
 
         <section class="section">
-            <span class="phase-label">weeks 3-6</span>
+            <span class="phase-badge">weeks 3-6</span>
             <h2>sign-up flow redesign</h2>
-            <p>the sign-up flow was rebuilt by consolidating steps, adding an animated visual progress indicator, and keeping a modular, clean yet distinct ui throughout onboarding.</p>
+            <p>the sign-up flow was rebuilt by consolidating steps, adding a visual progress indicator, and keeping a modular, clean yet distinct ui throughout onboarding.</p>
 
             <div class="grid-2">
                 <div class="card">
                     <h4>before</h4>
-                    <img src="signup-before.png" alt="original rythmeet sign-up screen">
-                    <p>• single email and password form<br>• no visual sense of progress<br>• minimal guidance on what comes next</p>
+                    <img src="rpics/Sign%20Up%20V1.png" alt="original rythmeet sign-up screen">
+                    <p>a single email and password form with minimal guidance on what comes next.</p>
                 </div>
                 <div class="card">
-                    <h4>after</h4>
-                    <img src="signup-after.png" alt="redesigned multi-step sign-up flow">
-                    <p>• broken into digestible steps with a vertical progress slider<br>• genre and skill selection built in<br>• clear back/next controls at every step</p>
+                    <h4>after (v2)</h4>
+                    <img src="rpics/Sign%20Up%20V2.png" alt="redesigned sign-up screen collecting full name, date of birth, email, and password">
+                    <p>a cleaner single-screen version that gathers full name and date of birth up front, alongside a google sign-in option.</p>
                 </div>
             </div>
 
             <div class="full-image-card">
-                <img src="signup-onboarding.png" alt="post sign-up welcome checklist">
-                <p class="caption">a welcome checklist carries the same progress-driven feeling past sign-up and into a user's first few actions.</p>
+                <img src="rpics/Basic%20Information.png" alt="multi-step onboarding flow selecting role, genre, and vocalist details">
+                <p class="caption">the multi-step direction: role selection, genre, and skill details are broken into focused steps with a progress slider, ending on a playful "turn it up" confirmation screen.</p>
             </div>
         </section>
 
         <section class="section">
-            <span class="phase-label">weeks 3-6</span>
+            <span class="phase-badge">weeks 3-6</span>
             <h2>create/edit events flow</h2>
             <p>the create/edit events flow was redesigned around speed. a pop-up window replaced the original full-page redirect, and the number of options an organizer has to sort through at each step was streamlined.</p>
 
-            <div class="grid-2">
-                <div class="card">
-                    <h4>entry point</h4>
-                    <img src="events-entry.png" alt="event organizer profile with create event entry point">
-                    <p>event creation now lives directly on an organizer's profile, next to their upcoming events and location details.</p>
-                </div>
-                <div class="card">
-                    <h4>quick-create pop-up</h4>
-                    <img src="events-create.png" alt="create event pop-up window with step tabs">
-                    <p>a four-step pop-up (details, schedule, registration, logistics) keeps organizers on the same page instead of bouncing them across the site.</p>
-                </div>
+            <div class="full-image-card">
+                <img src="rpics/Creating%20Events%20%28Entry%20Point%29.png" alt="event organizer profile with create event entry point">
+                <p class="caption">event creation now lives directly on an organizer's profile, next to their upcoming events, location, and impact stats.</p>
+            </div>
+
+            <div class="full-image-card">
+                <img src="rpics/Create%20Event.png" alt="four step create event pop-up: details, schedule, registration, logistics">
+                <p class="caption">a four-step pop-up — details, schedule, registration, and logistics — keeps organizers on the same page instead of bouncing them across the site.</p>
             </div>
         </section>
 
         <section class="section">
-            <span class="phase-label">weeks 7-8</span>
+            <span class="phase-badge">weeks 7-8</span>
             <h2>dashboard redesign & new branding guidelines</h2>
             <p>with the initial scope complete, the team split into two groups to take on two more projects: continuing the redesign of the dashboard, and updating rythmeet's branding guidelines.</p>
 
             <h3>dashboard redesign</h3>
             <p>the professional feel of the original dashboard was preserved, but the main goal was letting users switch easily between dashboards for different roles (e.g. musician to band). tabs were introduced, the number of metrics shown per tab was reduced, and the page became an at-a-glance, non-scrollable view.</p>
 
+            <div class="full-image-card">
+                <img src="rpics/Dashboard.png" alt="dashboard mockups across musician, band, studio, and event roles">
+                <p class="caption">dashboards for every role — musician, band, studio, and event organizer — each with dedicated activity and growth tabs.</p>
+            </div>
+
+            <h3>profile switching</h3>
+            <p>profile management got its own upgrade too. an account can hold multiple profiles (say, a musician profile and a band profile), and the account menu lets users jump between them without logging out and back in.</p>
+
             <div class="grid-2">
                 <div class="card">
-                    <h4>before</h4>
-                    <img src="dashboard-before.png" alt="mid-fidelity dashboard wireframe with role switcher">
-                    <p>early wireframes tested a role-switcher and tabbed activity/growth views across musician, band, studio, and event dashboards.</p>
+                    <h4>full profile editor</h4>
+                    <img src="rpics/Edit%20Profile.png" alt="edit profile page with basic information, genres, skills, and activities">
+                    <p>every profile field, from bio to skill level to collaboration status, lives in one organized editor.</p>
                 </div>
                 <div class="card">
-                    <h4>after</h4>
-                    <img src="dashboard-after.png" alt="high-fidelity growth dashboard with metrics and reviews">
-                    <p>the growth tab surfaces profile views, ratings, and reviews at a glance, without any scrolling required.</p>
+                    <h4>switching profiles</h4>
+                    <img src="rpics/Edit%20Profile-1.png" alt="account dropdown showing current profile and option to add a new profile">
+                    <p>the account menu shows which profile is active and makes adding or switching profiles a one-click action.</p>
                 </div>
             </div>
 
             <h3>updated branding guidelines</h3>
             <p>the guidelines were refreshed with more pastel colors and gradients folded into the identity system, reinforcing the idea of harmony and of connecting people through their shared love of music.</p>
-
-            <div class="full-image-card">
-                <img src="branding-guidelines.png" alt="updated rythmeet branding guidelines spread">
-                <p class="caption">the updated branding guidelines: brand overview, color palette, color hierarchy, gradient usage, and type stack.</p>
-            </div>
         </section>
 
         <section class="section">
@@ -469,7 +472,7 @@
             <div class="grid-2">
                 <div class="card">
                     <h4>🔐 sign-up & onboarding</h4>
-                    <p>a consolidated, multi-step sign-up flow with a visual progress indicator and post-signup welcome checklist.</p>
+                    <p>a consolidated, multi-step sign-up flow with a visual progress indicator and playful confirmation screen.</p>
                 </div>
                 <div class="card">
                     <h4>🎟️ event creation flow</h4>
