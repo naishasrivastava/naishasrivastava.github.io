@@ -247,19 +247,23 @@
 
         .full-image-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border: 2px solid #78350f;
-            box-shadow: 8px 8px 0px rgba(120, 53, 15, 0.2);
+            box-shadow: 8px 8px 0 rgba(120,53,15,.2);
             margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+        
         .full-image-card img,
         .full-image-card video {
-            width: 100%;
-            height: auto;
             display: block;
-            margin: 0 auto 1.5rem auto;
-            border: 2px solid #78350f;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border: none;
         }
 
         .full-image-card p {
