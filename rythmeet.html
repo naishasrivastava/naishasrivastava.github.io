@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rythmeet x Praxis - Case Study</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tilt+Warp&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -154,41 +158,38 @@
             text-transform: lowercase;
         }
 
-        .scope-box {
+        .challenge-box {
             background: white;
             padding: 3rem;
             border: 2px solid #78350f;
             box-shadow: 8px 8px 0px rgba(120, 53, 15, 0.2);
             margin: 2rem 0;
+            text-align: center;
         }
 
-        .scope-box .label {
+        .challenge-box .question {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1d4ed8;
+            margin-bottom: 1rem;
+            text-transform: lowercase;
+        }
+
+        .challenge-box .answer {
+            font-size: 1.25rem;
+            color: #78350f;
+            font-weight: 600;
+            text-transform: lowercase;
+        }
+
+        .phase-label {
+            display: block;
             font-size: 1rem;
             font-weight: 900;
             color: #1d4ed8;
             text-transform: lowercase;
+            letter-spacing: 0.03em;
             margin-bottom: 1rem;
-            display: block;
-        }
-
-        .scope-box p {
-            font-size: 1.375rem;
-            color: #78350f;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .week-badge {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 0.5rem 1.5rem;
-            font-weight: 900;
-            text-transform: lowercase;
-            border: 2px solid #78350f;
-            box-shadow: 4px 4px 0px rgba(120, 53, 15, 0.2);
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
         }
 
         .grid-2 {
@@ -215,41 +216,74 @@
             font-size: 1.25rem;
             font-weight: 900;
             color: #78350f;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             text-transform: lowercase;
         }
 
         .card img {
             width: calc(100% + 4rem);
+            max-width: none;
             height: auto;
             margin: 0 -2rem 1.5rem -2rem;
             border: none;
+            display: block;
         }
 
         .card p {
             margin: 0;
         }
 
-        .highlight-text {
-            background: #fef3c7;
-            padding: 0.1rem 0.4rem;
-            font-weight: 700;
-        }
-
-        .team-list {
-            list-style: none;
-            padding: 0;
+        .card p + p {
             margin-top: 1rem;
         }
 
-        .team-list li {
-            display: inline-block;
-            background: #fef3c7;
-            padding: 0.5rem 1rem;
-            margin: 0.25rem;
-            border: 1px solid #78350f;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .full-image-card {
+            background: white;
+            padding: 2rem;
+            border: 2px solid #78350f;
+            box-shadow: 8px 8px 0px rgba(120, 53, 15, 0.2);
+            margin: 2rem 0;
+        }
+
+        .full-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #78350f;
+            margin-bottom: 1.5rem;
+        }
+
+        .full-image-card p {
+            margin: 0;
+        }
+
+        .insights-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .insights-list li {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #1d4ed8;
+            box-shadow: 3px 3px 0px rgba(120, 53, 15, 0.1);
+        }
+
+        .insights-list li strong {
+            color: #1d4ed8;
+            font-weight: 900;
+            text-transform: lowercase;
+            font-size: 1.125rem;
+        }
+
+        .caption {
+            font-size: 1rem;
+            color: #92400e;
+            text-transform: lowercase;
+            font-style: italic;
+            margin-top: -1rem;
         }
 
         footer {
@@ -303,7 +337,7 @@
         <div class="hero-content">
             <h1>rythmeet<br><span class="highlight">mdc praxis</span></h1>
             <p class="subtitle">streamlining user experience through simplified flows</p>
-            
+
             <div class="project-info">
                 <div class="info-item">
                     <strong>timeline:</strong>
@@ -323,55 +357,140 @@
 
     <div class="container">
         <section class="section">
-            <h2>project scope</h2>
-            <div class="scope-box">
-                <span class="label">the goal:</span>
-                <p>to streamline rythmeet's user experience by simplifying user flows and establishing consistent ui across the website</p>
+            <h2>about the client</h2>
+            <p>rythmeet is a music networking platform that connects musicians, venues, studios, event organizers, and teachers, cutting out the middlemen and fees that usually get in the way of building real connections in the music community.</p>
+            <p>this project was completed through mdc praxis, medium design collective's client-facing program that pairs student design teams with real companies to solve real product problems.</p>
+        </section>
+
+        <section class="section">
+            <h2>the challenge</h2>
+            <div class="challenge-box">
+                <p class="question">how might we...</p>
+                <p class="answer">streamline rythmeet's user experience by simplifying user flows and establishing consistent ui across the website?</p>
             </div>
         </section>
 
         <section class="section">
-            <span class="week-badge">week 1-2</span>
-            <h2>website design critique</h2>
-            <p>our designers started by evaluating the current state of rythmeet's website and presented their critiques with a focus on user flows of the sign-up process, editing profile, creating events, and accessing dashboard stats.</p>
-            
-            <p>based on their critiques, designers presented their <span class="highlight-text">proposed user flow diagram</span> that would streamline the user experience. due to time constraints, we initially established our project scope to be improving the create profile user flow and create events user flow.</p>
+            <span class="phase-label">weeks 1-2</span>
+            <h2>research & critique</h2>
+            <p>the process started with a full evaluation of rythmeet's existing website, with critique focused on four core flows: signing up, editing a profile, creating events, and reading dashboard stats.</p>
+
+            <ul class="insights-list">
+                <li><strong>sign-up:</strong> a single-step form with little guidance and no sense of progress</li>
+                <li><strong>editing a profile:</strong> scattered fields with no clear structure for musicians to showcase their skills</li>
+                <li><strong>creating events:</strong> redirect-heavy, with too many options presented at once</li>
+                <li><strong>dashboard stats:</strong> dense, scroll-heavy, and hard to scan at a glance</li>
+            </ul>
+
+            <div class="full-image-card">
+                <img src="research-critique.png" alt="critique notes, early mockups, and user flow diagrams">
+                <p class="caption">critique notes, early mockups, and the user flow diagrams that framed the redesign.</p>
+            </div>
+
+            <p>the critique led to a proposed user flow diagram meant to streamline the experience end to end. given time constraints, the project scope was initially narrowed to two flows: creating a profile and creating an event.</p>
         </section>
 
         <section class="section">
-            <span class="week-badge">week 3-6</span>
-            <h2>user flow re-design & prototyping</h2>
-            <p>next, designers finalized the improved user flow diagrams and began prototyping these changes with mid to high fidelity wireframes, ensuring consistency and simplicity were maintained throughout all pages.</p>
+            <span class="phase-label">weeks 3-6</span>
+            <h2>sign-up flow redesign</h2>
+            <p>the sign-up flow was rebuilt by consolidating steps, adding an animated visual progress indicator, and keeping a modular, clean yet distinct ui throughout onboarding.</p>
 
             <div class="grid-2">
                 <div class="card">
-                    <h4>sign-up flow</h4>
-                    <p>the updated sign-up flow was improved by consolidating sign-up steps, including an animated visual progress indicator, and maintaining a <span class="highlight-text">modular, clean yet unique ui</span> to the onboarding process.</p>
+                    <h4>before</h4>
+                    <img src="signup-before.png" alt="original rythmeet sign-up screen">
+                    <p>• single email and password form<br>• no visual sense of progress<br>• minimal guidance on what comes next</p>
                 </div>
                 <div class="card">
-                    <h4>create/edit events flow</h4>
-                    <p>the updated create/edit events user flow was improved by placing emphasis on being able to quickly create and edit events. to achieve this, we utilized a pop-up window from the original page, as opposed to being redirected to new page, and streamlined the options event organizers could choose.</p>
+                    <h4>after</h4>
+                    <img src="signup-after.png" alt="redesigned multi-step sign-up flow">
+                    <p>• broken into digestible steps with a vertical progress slider<br>• genre and skill selection built in<br>• clear back/next controls at every step</p>
+                </div>
+            </div>
+
+            <div class="full-image-card">
+                <img src="signup-onboarding.png" alt="post sign-up welcome checklist">
+                <p class="caption">a welcome checklist carries the same progress-driven feeling past sign-up and into a user's first few actions.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <span class="phase-label">weeks 3-6</span>
+            <h2>create/edit events flow</h2>
+            <p>the create/edit events flow was redesigned around speed. a pop-up window replaced the original full-page redirect, and the number of options an organizer has to sort through at each step was streamlined.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>entry point</h4>
+                    <img src="events-entry.png" alt="event organizer profile with create event entry point">
+                    <p>event creation now lives directly on an organizer's profile, next to their upcoming events and location details.</p>
+                </div>
+                <div class="card">
+                    <h4>quick-create pop-up</h4>
+                    <img src="events-create.png" alt="create event pop-up window with step tabs">
+                    <p>a four-step pop-up (details, schedule, registration, logistics) keeps organizers on the same page instead of bouncing them across the site.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <span class="week-badge">week 7-8</span>
-            <h2>dashboard re-design & branding</h2>
-            <p>with our project scope completed, our team broke off into two teams to tackle two more projects: to continue re-design process of the dashboard & to update rythmeet's branding guidelines to elevate its current state.</p>
+            <span class="phase-label">weeks 7-8</span>
+            <h2>dashboard redesign & new branding guidelines</h2>
+            <p>with the initial scope complete, the team split into two groups to take on two more projects: continuing the redesign of the dashboard, and updating rythmeet's branding guidelines.</p>
 
             <h3>dashboard redesign</h3>
-            <p>the professional essence of the original dashboard was preserved, but our main goal was to allow the user to easily switch between the different dashboards for a different role (e.g. musician to band). we also introduced tabs, reduced the amount of metrics displayed per tab, and changed it to be an <span class="highlight-text">at-a-glance, non-scrollable page</span>.</p>
+            <p>the professional feel of the original dashboard was preserved, but the main goal was letting users switch easily between dashboards for different roles (e.g. musician to band). tabs were introduced, the number of metrics shown per tab was reduced, and the page became an at-a-glance, non-scrollable view.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>before</h4>
+                    <img src="dashboard-before.png" alt="mid-fidelity dashboard wireframe with role switcher">
+                    <p>early wireframes tested a role-switcher and tabbed activity/growth views across musician, band, studio, and event dashboards.</p>
+                </div>
+                <div class="card">
+                    <h4>after</h4>
+                    <img src="dashboard-after.png" alt="high-fidelity growth dashboard with metrics and reviews">
+                    <p>the growth tab surfaces profile views, ratings, and reviews at a glance, without any scrolling required.</p>
+                </div>
+            </div>
 
             <h3>updated branding guidelines</h3>
-            <p>we created an updated branding guideline that included more pastel colors and suggests incorporating gradients as a new part of their brand identity that promotes the idea of harmony and of connecting users over their shared connection of music.</p>
+            <p>the guidelines were refreshed with more pastel colors and gradients folded into the identity system, reinforcing the idea of harmony and of connecting people through their shared love of music.</p>
+
+            <div class="full-image-card">
+                <img src="branding-guidelines.png" alt="updated rythmeet branding guidelines spread">
+                <p class="caption">the updated branding guidelines: brand overview, color palette, color hierarchy, gradient usage, and type stack.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>final deliverables</h2>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>🔐 sign-up & onboarding</h4>
+                    <p>a consolidated, multi-step sign-up flow with a visual progress indicator and post-signup welcome checklist.</p>
+                </div>
+                <div class="card">
+                    <h4>🎟️ event creation flow</h4>
+                    <p>a streamlined, pop-up-based flow for creating and editing events without leaving the page.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 role-based dashboard</h4>
+                    <p>an at-a-glance dashboard that adapts across musician, band, studio, and event organizer roles.</p>
+                </div>
+                <div class="card">
+                    <h4>🎨 branding guidelines</h4>
+                    <p>an updated visual identity system with pastel colors, gradient usage, and type guidance.</p>
+                </div>
+            </div>
         </section>
 
         <section class="section">
             <h2>impact & learnings</h2>
-            <p>this project taught us the value of iterative design—starting with critique, moving through structured user flow improvements, and finishing with a cohesive branding system. working across a large, cross-functional team required clear communication and modular design thinking to keep every page consistent.</p>
-            
-            <p>by focusing on simplification at every step—from onboarding to dashboards—we helped rythmeet create a more intuitive, harmonious experience that reflects its mission of connecting people through music.</p>
+            <p>this project reinforced the value of iterative design — starting with critique, moving through structured user flow improvements, and finishing with a cohesive branding system. working across a large, cross-functional team required clear communication and modular design thinking to keep every page consistent.</p>
+
+            <p>by focusing on simplification at every step, from onboarding to dashboards, the redesign helped rythmeet feel more intuitive and harmonious — better reflecting its mission of connecting people through music.</p>
         </section>
     </div>
 
