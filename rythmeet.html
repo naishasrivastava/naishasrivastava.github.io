@@ -255,14 +255,14 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .full-image-card img,
         .full-image-card video {
             display: block;
             width: 100%;
             max-width: 100%;
             height: auto;
-            margin: 0 auto;
+            margin: 0 auto 1.75rem auto;
             border: none;
         }
 
@@ -300,34 +300,34 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            border: 2px solid #78350f;
+            border: none;
         }
-        
+
         .detail-column {
             display: flex;
             flex-direction: column;
             gap: 2rem;
             margin: 2rem 0;
         }
-        
+
         .detail-column .image-box,
         .detail-column .detail-text {
             background: white;
             border: 2px solid #78350f;
             box-shadow: 6px 6px 0 rgba(120,53,15,.2);
         }
-        
+
         .detail-column .image-box {
             padding: 1.5rem;
         }
-        
+
         .detail-column .image-box img {
             width: 100%;
             height: auto;
             display: block;
             border: none;
         }
-        
+
         .detail-column .detail-text {
             padding: 2rem;
         }
@@ -395,7 +395,6 @@
             font-size: 1rem;
             color: #92400e;
             text-transform: lowercase;
-            margin-top: -1rem;
         }
 
         footer {
@@ -436,6 +435,14 @@
 
             .info-item.team {
                 grid-column: 1;
+            }
+
+            .detail-row {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-row .image-box {
+                order: -1;
             }
         }
     </style>
@@ -569,7 +576,7 @@
 
         <section class="section">
             <span class="phase-badge">weeks 7-8</span>
-            <h2>dashboard & branding guidelines redesign</h2>
+            <h2>dashboard & branding redesign</h2>
             <p>with the initial scope complete, the team split into two groups to take on two more projects: continuing the redesign of the dashboard, and updating rythmeet's branding guidelines.</p>
 
             <h3>dashboard redesign</h3>
