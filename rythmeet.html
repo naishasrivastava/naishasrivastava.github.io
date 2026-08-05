@@ -300,7 +300,7 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            border: 2px solid #78350f;
+            border: none;
         }
 
         .detail-column {
@@ -342,14 +342,14 @@
             justify-content: center;
         }
 
-        .detail-text ul {
+        .bullet-list {
             list-style: none;
             padding: 0;
             margin: 1rem 0 0 0;
         }
 
-        .detail-text ul li {
-            font-size: 1.125rem;
+        .bullet-list li {
+            font-size: 1.0625rem;
             line-height: 1.7;
             color: #92400e;
             text-transform: lowercase;
@@ -358,11 +358,7 @@
             margin-bottom: 0.75rem;
         }
 
-        .detail-row.wide {
-            grid-template-columns: 1.6fr 1fr;
-        }
-
-        .detail-text ul li::before {
+        .bullet-list li::before {
             content: "•";
             color: #1d4ed8;
             font-weight: 900;
@@ -444,10 +440,6 @@
             .detail-row .image-box {
                 order: -1;
             }
-            
-            .version-list li::marker {
-                color: #1d4ed8;
-            }
         }
     </style>
 </head>
@@ -517,7 +509,7 @@
                 <div class="card">
                     <h4>version 1</h4>
                     <img src="rpics/Sign%20Up%20V1.png" alt="sign up version 1 with email and password fields">
-                    <ul class="version-list" style="margin:0; padding-left:1.1rem; color:#92400e; font-size:1.0625rem; line-height:1.7; text-transform:lowercase;">
+                    <ul class="bullet-list">
                         <li>only email and password are collected up front</li>
                         <li>google sign-in sits below the form as a secondary option</li>
                         <li>fastest possible path to a created account, with personalization left for later</li>
@@ -526,7 +518,7 @@
                 <div class="card">
                     <h4>version 2</h4>
                     <img src="rpics/Sign%20Up%20V2.png" alt="sign up version 2 with full name, date of birth, email, and password fields">
-                    <ul class="version-list" style="margin:0; padding-left:1.1rem; color:#92400e; font-size:1.0625rem; line-height:1.7; text-transform:lowercase;">
+                    <ul class="bullet-list">
                         <li>full name and date of birth are collected alongside email and password</li>
                         <li>google sign-in is promoted to the top of the form as the fastest option</li>
                         <li>a warmer, photography-forward layout echoes rythmeet's "where music connects" brand tone</li>
@@ -553,7 +545,7 @@
                 </div>
                 <div class="detail-text">
                     <h4 class="image-title">why this layout</h4>
-                    <ul>
+                    <ul class="bullet-list">
                         <li>the create event button lives directly on the organizer's own profile, next to their existing events, so there's no separate dashboard to dig through</li>
                         <li>impact stats (total attendees, events created) sit right beside the button to reinforce momentum and encourage repeat use</li>
                         <li>the venue map stays on the same page so organizers can confirm location details before starting event creation</li>
@@ -569,7 +561,7 @@
                 <div class="detail-text">
                     <h4 class="image-title">why this layout</h4>
                     <p style="margin-bottom:1rem;">the pop-up is broken into four steps: details, schedule, registration, and logistics. this keeps organizers on the same page instead of bouncing them across the site.</p>
-                    <ul>
+                    <ul class="bullet-list">
                         <li>a pop-up was chosen over a full-page redirect so organizers never lose their place on their profile</li>
                         <li>registration type and cancellation policy are decided in one step, instead of being buried in separate settings</li>
                         <li>equipment defaults to "provided by venue" to cut down on repetitive data entry for touring artists</li>
@@ -580,7 +572,7 @@
 
         <section class="section">
             <span class="phase-badge">weeks 7-8</span>
-            <h2>dashboard & branding redesign</h2>
+            <h2>dashboard & branding guidelines redesign</h2>
             <p>with the initial scope complete, the team split into two groups to take on two more projects: continuing the redesign of the dashboard, and updating rythmeet's branding guidelines.</p>
 
             <h3>dashboard redesign</h3>
