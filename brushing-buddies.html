@@ -210,10 +210,16 @@
             text-transform: lowercase;
         }
 
-        .card img {
+        .card picture {
+            display: block;
             width: calc(100% + 4rem);
-            height: auto;
             margin: 0 -2rem 1.5rem -2rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
             border: none;
             background: #fef3c7; /* placeholder tone while lazy image loads, avoids a white flash */
         }
@@ -417,22 +423,34 @@
             <div class="grid-2">
                 <div class="card">
                     <h4>playful & innovative</h4>
-                    <img src="brushing-buddies-pics/playful.png" alt="playful and innovative moodboard" loading="lazy" decoding="async" width="1200" height="800">
+                    <picture>
+                        <source srcset="brushing-buddies-pics/playful.webp" type="image/webp">
+                        <img src="brushing-buddies-pics/playful.jpg" alt="playful and innovative moodboard" loading="lazy" decoding="async" width="1600" height="1610">
+                    </picture>
                     <p>conveyed a playful, positive vibe that honors youth, creativity, and inclusivity. bold and rounded typefaces with vibrant, welcoming colors combined childlike energy with modern design trends using soft shapes and approachable sans-serif fonts. this direction emphasized movement, joy, and accessibility while maintaining a contemporary aesthetic that appeals to both children and design-conscious parents.</p>
                 </div>
                 <div class="card">
                     <h4>calming & approachable</h4>
-                    <img src="brushing-buddies-pics/calming.png" alt="calming and approachable moodboard" loading="lazy" decoding="async" width="1200" height="800">
+                    <picture>
+                        <source srcset="brushing-buddies-pics/calming.webp" type="image/webp">
+                        <img src="brushing-buddies-pics/calming.jpg" alt="calming and approachable moodboard" loading="lazy" decoding="async" width="1600" height="1736">
+                    </picture>
                     <p>created something both playful yet calming to draw attention while emphasizing a smoother teeth-brushing experience for both children and adults. squiggly lines reminiscent of toothpaste tie into the product while adding movement, and pops of pastel color provide vibrancy that remains soothing. </p>
                 </div>
                 <div class="card">
                     <h4>bright & friendly</h4>
-                    <img src="brushing-buddies-pics/bright.png" alt="bright and friendly moodboard" loading="lazy" decoding="async" width="1200" height="800">
+                    <picture>
+                        <source srcset="brushing-buddies-pics/bright.webp" type="image/webp">
+                        <img src="brushing-buddies-pics/bright.jpg" alt="bright and friendly moodboard" loading="lazy" decoding="async" width="1600" height="1221">
+                    </picture>
                     <p>bright and playful identity appealing to both kids and parents, using organic, rounded shapes, cheerful illustrations, and a vibrant palette of greens, blues, yellows, and pinks. bold sans serif headings paired with lighter text keep the design clean and friendly, while imagery of smiling characters reinforces trust, positivity, and excitement around brushing.</p>
                 </div>
                 <div class="card">
                     <h4>imaginative & textured</h4>
-                    <img src="brushing-buddies-pics/imaginative.png" alt="imaginative and textured moodboard" loading="lazy" decoding="async" width="1200" height="800">
+                    <picture>
+                        <source srcset="brushing-buddies-pics/imaginative.webp" type="image/webp">
+                        <img src="brushing-buddies-pics/imaginative.jpg" alt="imaginative and textured moodboard" loading="lazy" decoding="async" width="1600" height="959">
+                    </picture>
                     <p>evoked childhood through playful texture, color, and form. emphasized imagination and curiosity, relevant to encouraging children through storytelling. hand-drawn elements and organic shapes appealed to both children and adults while creating a warm, nostalgic feeling. this approach balanced whimsy with authenticity, making the brand feel both fun and trustworthy to parents seeking engaging solutions for their children's daily routines.</p>
                 </div>
             </div>
