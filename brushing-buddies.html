@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tilt+Warp&display=swap" rel="stylesheet">
+
+    <!-- Preload moodboard images so they start downloading immediately, in parallel with everything else -->
+    <link rel="preload" as="image" href="brushing-buddies-pics/playful.png">
+    <link rel="preload" as="image" href="brushing-buddies-pics/calming.png">
+    <link rel="preload" as="image" href="brushing-buddies-pics/bright.png">
+    <link rel="preload" as="image" href="brushing-buddies-pics/imaginative.png">
+
     <style>
         * {
             margin: 0;
@@ -210,56 +217,12 @@
             text-transform: lowercase;
         }
 
-        /* ── Image loading wrapper + shimmer ── */
-        .img-wrap {
-            position: relative;
-            width: calc(100% + 4rem);
-            margin: 0 -2rem 1.5rem -2rem;
-            overflow: hidden;
-            background: #fef3c7;
-            min-height: 180px;
-        }
-
-        .img-wrap::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                100deg,
-                #fef3c7 30%,
-                #fff8e1 45%,
-                #ffe9a8 50%,
-                #fff8e1 55%,
-                #fef3c7 70%
-            );
-            background-size: 250% 100%;
-            animation: shimmer 1.6s ease-in-out infinite;
-            opacity: 1;
-            transition: opacity 0.4s ease;
-        }
-
-        .img-wrap.loaded::before {
-            opacity: 0;
-            animation: none;
-        }
-
-        @keyframes shimmer {
-            0%   { background-position: 200% 0; }
-            100% { background-position: -50% 0; }
-        }
-
         .card img {
-            display: block;
-            width: 100%;
+            width: calc(100% + 4rem);
             height: auto;
+            margin: 0 -2rem 1.5rem -2rem;
             border: none;
-            position: relative;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .img-wrap.loaded img {
-            opacity: 1;
+            display: block;
         }
 
         .card p {
@@ -461,30 +424,22 @@
             <div class="grid-2">
                 <div class="card">
                     <h4>playful & innovative</h4>
-                    <div class="img-wrap">
-                        <img src="brushing-buddies-pics/playful.png" alt="playful and innovative moodboard" loading="lazy" decoding="async">
-                    </div>
+                    <img src="brushing-buddies-pics/playful.png" alt="playful and innovative moodboard">
                     <p>conveyed a playful, positive vibe that honors youth, creativity, and inclusivity. bold and rounded typefaces with vibrant, welcoming colors combined childlike energy with modern design trends using soft shapes and approachable sans-serif fonts. this direction emphasized movement, joy, and accessibility while maintaining a contemporary aesthetic that appeals to both children and design-conscious parents.</p>
                 </div>
                 <div class="card">
                     <h4>calming & approachable</h4>
-                    <div class="img-wrap">
-                        <img src="brushing-buddies-pics/calming.png" alt="calming and approachable moodboard" loading="lazy" decoding="async">
-                    </div>
+                    <img src="brushing-buddies-pics/calming.png" alt="calming and approachable moodboard">
                     <p>created something both playful yet calming to draw attention while emphasizing a smoother teeth-brushing experience for both children and adults. squiggly lines reminiscent of toothpaste tie into the product while adding movement, and pops of pastel color provide vibrancy that remains soothing. </p>
                 </div>
                 <div class="card">
                     <h4>bright & friendly</h4>
-                    <div class="img-wrap">
-                        <img src="brushing-buddies-pics/bright.png" alt="bright and friendly moodboard" loading="lazy" decoding="async">
-                    </div>
+                    <img src="brushing-buddies-pics/bright.png" alt="bright and friendly moodboard">
                     <p>bright and playful identity appealing to both kids and parents, using organic, rounded shapes, cheerful illustrations, and a vibrant palette of greens, blues, yellows, and pinks. bold sans serif headings paired with lighter text keep the design clean and friendly, while imagery of smiling characters reinforces trust, positivity, and excitement around brushing.</p>
                 </div>
                 <div class="card">
                     <h4>imaginative & textured</h4>
-                    <div class="img-wrap">
-                        <img src="brushing-buddies-pics/imaginative.png" alt="imaginative and textured moodboard" loading="lazy" decoding="async">
-                    </div>
+                    <img src="brushing-buddies-pics/imaginative.png" alt="imaginative and textured moodboard">
                     <p>evoked childhood through playful texture, color, and form. emphasized imagination and curiosity, relevant to encouraging children through storytelling. hand-drawn elements and organic shapes appealed to both children and adults while creating a warm, nostalgic feeling. this approach balanced whimsy with authenticity, making the brand feel both fun and trustworthy to parents seeking engaging solutions for their children's daily routines.</p>
                 </div>
             </div>
@@ -593,24 +548,5 @@
         <p>© 2026 naisha srivastava</p>
         <a href="index.html" class="back-link">← back to portfolio</a>
     </footer>
-
-    <script>
-        // Fade each moodboard image in and stop its shimmer once it's actually loaded.
-        // Handles both the lazy-load case (image loads later, on scroll) and the
-        // already-cached case (image.complete is true immediately on script run).
-        document.querySelectorAll('.img-wrap').forEach(wrap => {
-            const img = wrap.querySelector('img');
-            if (!img) return;
-
-            const markLoaded = () => wrap.classList.add('loaded');
-
-            if (img.complete && img.naturalWidth > 0) {
-                markLoaded();
-            } else {
-                img.addEventListener('load', markLoaded);
-                img.addEventListener('error', markLoaded); // don't shimmer forever if a file 404s
-            }
-        });
-    </script>
 </body>
 </html>
